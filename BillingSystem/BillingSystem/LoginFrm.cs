@@ -1,74 +1,81 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using System.Data.SqlClient;
+﻿using BillingSystem.BLL;
 using BillingSystem.Common;
+using BillingSystem.Models;
+using Common;
+using System;
+using System.Collections;
+using System.Windows.Forms;
 
 namespace BillingSystem
 {
     public partial class LoginFrm : Form
     {
+        /// <summary>
+        /// メッセージINIファイル
+        /// </summary>
+        protected MyMessageIniFile myMsgIni;
         public LoginFrm()
         {
             InitializeComponent();
+            myMsgIni = new MyMessageIniFile();
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BtnLogin_Click(object sender, EventArgs e)
         {
-
-            string msg = "";
-            if (TxtUserID.Text.TrimEnd() == "" || TxtPassword.Text.TrimEnd() == "")
+            try
             {
-                MessageBox.Show("ログインIDまたはパスワードは不正です。");
-                return;
+                AccountInfo.UserID = string.Empty;
+                AccountInfo.UserName = string.Empty;
+                AccountInfo.Password = string.Empty;
+                //// DBアクセスサンプル
+                //MyCommonBLL bll = new MyCommonBLL();
+                //AccountModel inputData = new AccountModel();
+                //inputData.UserID = this.TxtUserID.Text;
+                //inputData.Password = this.TxtPassword.Text;
+                //AccountModel AccountData = bll.GetAccoutInfo(inputData);
+
+                //if(AccountData != null)
+                //{
+                //    // ログイン正常の場合、アカウント情報設定する
+                //    AccountInfo.UserID = "DB値";
+                //    AccountInfo.UserName = "DB値";
+                //    AccountInfo.Password = "DB値";
+                //    this.Hide();
+                //    SeikyuFrm seikyu = new SeikyuFrm();
+                //    seikyu.Show();
+                //}
+                //else
+                //{
+                //    string msg = myMsgIni.GetString(ConstCommon.MESSAGE, ConstCommon.IMG0001);
+                //    MessageBox.Show(msg); ;
+                //}
+
+                if (this.TxtUserID.Text.Equals("test") && this.TxtPassword.Text.Equals("12345"))
+                {
+                    // ログイン正常の場合、アカウント情報設定する
+                    AccountInfo.UserID = "DB値";
+                    AccountInfo.UserName = "DB値";
+                    AccountInfo.Password = "DB値";
+                    this.Hide();
+                    SeikyuFrm seikyu = new SeikyuFrm();
+                    seikyu.Show();
+                }
+                else
+                {
+                    string msg = myMsgIni.GetString(ConstCommon.MESSAGE, ConstCommon.IMG0001);
+                    MessageBox.Show(msg); ;
+                }
             }
-            //ログイン情報検索
-            string sql = "SELECT * FROM M_User WHERE LoginID = '" + DataTypeChageUtil.ChangeString(TxtUserID.Text) + "'";
-            sql += " AND Password = '" + PWDCodingUtil.Encrypt(this.TxtPassword.Text) + "'";
-            DbAccessor dbAccessor = new DbAccessor();
-            dbAccessor.Open();
-            var userlist = dbAccessor.ExecuteReader(sql);
-            if (userlist != null && userlist.Any())
+            catch (Exception ex)
             {
-                LoginInfo.UserID = userlist[0]["LoginID"].ToString();
-                LoginInfo.UserName = userlist[0]["UserName"].ToString();
-                SeikyuFrm seikyu = new SeikyuFrm();
-                seikyu.Show();
+                MessageBox.Show(ex.Message); ;
             }
-            else
-            {
-                MessageBox.Show("ログインIDまたはパスワードは不正です。");
-                return;
-            }
-            //DbAccessor dbAccessor = new DbAccessor();
-            //dbAccessor.Open();
-            //dbAccessor.BeginTransaction();
 
-            ////sql更新
-            ////sql更新            
-            ////sql更新            
-            ////sql更新            
-            ////sql更新            
-            ////sql更新            
-            ////sql更新
-            ////sql更新
-            ////sql更新
-            ////sql更新
-            ////sql更新
-
-            //dbAccessor.Commit();
-
-
-            //SeikyuFrm seikyu = new SeikyuFrm();
-            //seikyu.Show();
-            //Form1 f = new Form1();
-            //f.Show();
         }
     }
 }

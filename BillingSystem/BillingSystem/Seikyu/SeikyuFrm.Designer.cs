@@ -75,7 +75,7 @@
             this.panel3.Controls.Add(this.label1);
             this.panel3.Location = new System.Drawing.Point(4, 44);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1280, 108);
+            this.panel3.Size = new System.Drawing.Size(1241, 108);
             this.panel3.TabIndex = 9;
             // 
             // button1
@@ -86,6 +86,7 @@
             this.button1.TabIndex = 4;
             this.button1.Text = "検索";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // checkBox3
             // 
@@ -185,12 +186,12 @@
             this.panel4.Controls.Add(this.dataGridView1);
             this.panel4.Location = new System.Drawing.Point(4, 169);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1280, 423);
+            this.panel4.Size = new System.Drawing.Size(1241, 423);
             this.panel4.TabIndex = 10;
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(1164, 3);
+            this.button3.Location = new System.Drawing.Point(1129, 3);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(50, 30);
             this.button3.TabIndex = 2;
@@ -199,7 +200,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(1220, 3);
+            this.button2.Location = new System.Drawing.Point(1185, 3);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(50, 30);
             this.button2.TabIndex = 2;
@@ -209,7 +210,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(1088, 9);
+            this.label6.Location = new System.Drawing.Point(1053, 9);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(16, 20);
             this.label6.TabIndex = 1;
@@ -218,7 +219,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(1100, 9);
+            this.label7.Location = new System.Drawing.Point(1065, 9);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(55, 20);
             this.label7.TabIndex = 1;
@@ -227,7 +228,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(1053, 9);
+            this.label5.Location = new System.Drawing.Point(1018, 9);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(39, 20);
             this.label5.TabIndex = 1;
@@ -251,7 +252,7 @@
             this.dataGridView1.Location = new System.Drawing.Point(0, 39);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 21;
-            this.dataGridView1.Size = new System.Drawing.Size(1276, 381);
+            this.dataGridView1.Size = new System.Drawing.Size(1237, 381);
             this.dataGridView1.TabIndex = 0;
             // 
             // Column2
@@ -300,7 +301,7 @@
             // SeikyuFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
-            this.ClientSize = new System.Drawing.Size(1284, 661);
+            this.ClientSize = new System.Drawing.Size(1249, 639);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
             this.Name = "SeikyuFrm";

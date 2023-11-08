@@ -7,7 +7,7 @@ GO
 
 SET QUOTED_IDENTIFIER ON
 GO
-
+a
 CREATE TABLE [dbo].[M_Company](
 	[ID] [bigint] identity(1, 1) NOT NULL,
 	[CompanyName] [nvarchar] (100) NOT NULL,

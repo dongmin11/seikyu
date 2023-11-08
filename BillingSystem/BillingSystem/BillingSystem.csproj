@@ -9,7 +9,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>BillingSystem</RootNamespace>
     <AssemblyName>BillingSystem</AssemblyName>
-    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
   </PropertyGroup>
@@ -33,6 +33,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Common, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Lib\Common.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
@@ -52,11 +56,17 @@
     <Compile Include="BaseFrom\BaseFrm.Designer.cs">
       <DependentUpon>BaseFrm.cs</DependentUpon>
     </Compile>
-    <Compile Include="BaseFrom\LoginInfo.cs" />
+    <Compile Include="BLL\MyCommonBLL.cs" />
+    <Compile Include="BLL\SeikyuBLL.cs" />
+    <Compile Include="Common\AccountInfo.cs" />
     <Compile Include="Common\CommonUtil.cs" />
+    <Compile Include="Common\ConstCommon.cs" />
     <Compile Include="Common\DataTypeChageUtil.cs" />
-    <Compile Include="Common\DbAccessor.cs" />
+    <Compile Include="Common\MyMessageIniFile.cs" />
+    <Compile Include="Common\MyIniFile.cs" />
     <Compile Include="Common\PWDCodingUtil.cs" />
+    <Compile Include="DAL\MyCommonDAL.cs" />
+    <Compile Include="DAL\SeikyuDAL.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -69,6 +79,7 @@
     <Compile Include="LoginFrm.Designer.cs">
       <DependentUpon>LoginFrm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\AccountModel.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Seikyu\SeikyuFrm.cs">
@@ -99,6 +110,16 @@
     <EmbeddedResource Include="Seikyu\SeikyuFrm.resx">
       <DependentUpon>SeikyuFrm.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="Common.ini">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Ini\Message.ini">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Ini\Training.ini">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -110,11 +131,8 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config">
-      <SubType>Designer</SubType>
-    </None>
+    <Content Include="Lib\Common.dll" />
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
