@@ -1,0 +1,72 @@
+﻿USE[データベース名]
+GO
+
+/****** Object:  Table [dbo].[M_Employee]    Script Date: 2023/11/07 19:04:20 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[M_Employee](
+	[ID] [bigint] identity(1, 1) NOT NULL,
+	[Name] [nvarchar] (50) NOT NULL,
+	[NameKana] [nvarchar] (50) NULL,
+	[Department] [nvarchar] (50) NULL,
+	[TelNo] [nvarchar] (15) NULL,
+	[Note] [nvarchar] (250) NULL,
+	[DeleteFlag] [int] NOT NULL DEFAULT (0),
+	[CreatUserID] [bigint] NULL,
+	[CreatDateTime] [datetime2] NULL,
+	[UpdateUserID] [bigint] NULL,
+	[UpdateDateTime] [datetime2] NULL,
+	[LockVer] [int] NOT NULL DEFAULT (0),
+	CONSTRAINT PK_M_Employee PRIMARY KEY CLUSTERED ([ID] ASC) WITH (
+		 PAD_INDEX = OFF,
+		 STATISTICS_NORECOMPUTE = OFF,
+		 IGNORE_DUP_KEY = OFF,
+		 ALLOW_ROW_LOCKS = ON,
+		 ALLOW_PAGE_LOCKS = ON,
+		 OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF
+		) ON[PRIMARY]
+	) ON[PRIMARY]
+GO
+EXEC sys.sp_addextendedproperty @name = N'MS_Description', @value = N'ID' , @level0type = N'SCHEMA',@level0name = N'dbo', @level1type = N'TABLE',@level1name = N'M_Employee', @level2type = N'COLUMN',@level2name = N'ID'
+GO
+
+EXEC sys.sp_addextendedproperty @name = N'MS_Description', @value = N'氏名' , @level0type = N'SCHEMA',@level0name = N'dbo', @level1type = N'TABLE',@level1name = N'M_Employee', @level2type = N'COLUMN',@level2name = N'Name'
+GO
+
+EXEC sys.sp_addextendedproperty @name = N'MS_Description', @value = N'カナ氏名' , @level0type = N'SCHEMA',@level0name = N'dbo', @level1type = N'TABLE',@level1name = N'M_Employee', @level2type = N'COLUMN',@level2name = N'NameKana'
+GO
+
+EXEC sys.sp_addextendedproperty @name = N'MS_Description', @value = N'部署' , @level0type = N'SCHEMA',@level0name = N'dbo', @level1type = N'TABLE',@level1name = N'M_Employee', @level2type = N'COLUMN',@level2name = N'Department'
+GO
+
+EXEC sys.sp_addextendedproperty @name = N'MS_Description', @value = N'内線Tel' , @level0type = N'SCHEMA',@level0name = N'dbo', @level1type = N'TABLE',@level1name = N'M_Employee', @level2type = N'COLUMN',@level2name = N'TelNo'
+GO
+
+EXEC sys.sp_addextendedproperty @name = N'MS_Description', @value = N'備考' , @level0type = N'SCHEMA',@level0name = N'dbo', @level1type = N'TABLE',@level1name = N'M_Employee', @level2type = N'COLUMN',@level2name = N'Note'
+GO
+
+EXEC sys.sp_addextendedproperty @name = N'MS_Description', @value = N'削除フラグ' , @level0type = N'SCHEMA',@level0name = N'dbo', @level1type = N'TABLE',@level1name = N'M_Employee', @level2type = N'COLUMN',@level2name = N'DeleteFlag'
+GO
+
+EXEC sys.sp_addextendedproperty @name = N'MS_Description', @value = N'登録ユーザー' , @level0type = N'SCHEMA',@level0name = N'dbo', @level1type = N'TABLE',@level1name = N'M_Employee', @level2type = N'COLUMN',@level2name = N'CreatUserID'
+GO
+
+EXEC sys.sp_addextendedproperty @name = N'MS_Description', @value = N'登録日時' , @level0type = N'SCHEMA',@level0name = N'dbo', @level1type = N'TABLE',@level1name = N'M_Employee', @level2type = N'COLUMN',@level2name = N'CreatDateTime'
+GO
+
+EXEC sys.sp_addextendedproperty @name = N'MS_Description', @value = N'更新ユーザー' , @level0type = N'SCHEMA',@level0name = N'dbo', @level1type = N'TABLE',@level1name = N'M_Employee', @level2type = N'COLUMN',@level2name = N'UpdateUserID'
+GO
+
+EXEC sys.sp_addextendedproperty @name = N'MS_Description', @value = N'更新日時' , @level0type = N'SCHEMA',@level0name = N'dbo', @level1type = N'TABLE',@level1name = N'M_Employee', @level2type = N'COLUMN',@level2name = N'UpdateDateTime'
+GO
+
+EXEC sys.sp_addextendedproperty @name = N'MS_Description', @value = N'LockVer' , @level0type = N'SCHEMA',@level0name = N'dbo', @level1type = N'TABLE',@level1name = N'M_Employee', @level2type = N'COLUMN',@level2name = N'LockVer'
+GO
+
+EXEC sys.sp_addextendedproperty @name = N'MS_Description', @value = N'社員マスタ' , @level0type = N'SCHEMA',@level0name = N'dbo', @level1type = N'TABLE',@level1name = N'M_Employee'
+GO
+

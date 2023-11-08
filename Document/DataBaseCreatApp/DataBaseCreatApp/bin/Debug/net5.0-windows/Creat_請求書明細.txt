@@ -1,0 +1,97 @@
+﻿USE[データベース名]
+GO
+
+/****** Object:  Table [dbo].[T_BillingDetail]    Script Date: 2023/11/07 19:04:20 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[T_BillingDetail](
+	[ID] [bigint] identity(1, 1) NOT NULL,
+	[BillingID] [bigint] NOT NULL,
+	[EmployeeID] [bigint] NOT NULL,
+	[EmployeeName] [nvarchar] (50) NOT NULL,
+	[SettlementFlag] [int] NOT NULL DEFAULT (0),
+	[WorkingHours] [int] NOT NULL,
+	[BasicAmount] [int] NOT NULL,
+	[SettlementUpperLimitName] [nvarchar] (10) NULL,
+	[SettlementUpperLimit] [int] NULL,
+	[SettlementLowerLimitName] [nvarchar] (10) NULL,
+	[SettlementLowerLimit] [int] NULL,
+	[SettlementAmount] [int] NULL,
+	[BillingAmount] [int] NOT NULL,
+	[DeleteFlag] [int] NOT NULL DEFAULT (0),
+	[CreatUserID] [bigint] NULL,
+	[CreatDateTime] [datetime2] NULL,
+	[UpdateUserID] [bigint] NULL,
+	[UpdateDateTime] [datetime2] NULL,
+	[LockVer] [int] NOT NULL DEFAULT (0),
+	CONSTRAINT PK_T_BillingDetail PRIMARY KEY CLUSTERED ([ID] ASC) WITH (
+		 PAD_INDEX = OFF,
+		 STATISTICS_NORECOMPUTE = OFF,
+		 IGNORE_DUP_KEY = OFF,
+		 ALLOW_ROW_LOCKS = ON,
+		 ALLOW_PAGE_LOCKS = ON,
+		 OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF
+		) ON[PRIMARY]
+	) ON[PRIMARY]
+GO
+EXEC sys.sp_addextendedproperty @name = N'MS_Description', @value = N'請求書ID' , @level0type = N'SCHEMA',@level0name = N'dbo', @level1type = N'TABLE',@level1name = N'T_BillingDetail', @level2type = N'COLUMN',@level2name = N'BillingID'
+GO
+
+EXEC sys.sp_addextendedproperty @name = N'MS_Description', @value = N'社員ID' , @level0type = N'SCHEMA',@level0name = N'dbo', @level1type = N'TABLE',@level1name = N'T_BillingDetail', @level2type = N'COLUMN',@level2name = N'EmployeeID'
+GO
+
+EXEC sys.sp_addextendedproperty @name = N'MS_Description', @value = N'社員氏名' , @level0type = N'SCHEMA',@level0name = N'dbo', @level1type = N'TABLE',@level1name = N'T_BillingDetail', @level2type = N'COLUMN',@level2name = N'EmployeeName'
+GO
+
+EXEC sys.sp_addextendedproperty @name = N'MS_Description', @value = N'過不足精算フラグ' , @level0type = N'SCHEMA',@level0name = N'dbo', @level1type = N'TABLE',@level1name = N'T_BillingDetail', @level2type = N'COLUMN',@level2name = N'SettlementFlag'
+GO
+
+EXEC sys.sp_addextendedproperty @name = N'MS_Description', @value = N'勤務時間' , @level0type = N'SCHEMA',@level0name = N'dbo', @level1type = N'TABLE',@level1name = N'T_BillingDetail', @level2type = N'COLUMN',@level2name = N'WorkingHours'
+GO
+
+EXEC sys.sp_addextendedproperty @name = N'MS_Description', @value = N'基本月給（円）' , @level0type = N'SCHEMA',@level0name = N'dbo', @level1type = N'TABLE',@level1name = N'T_BillingDetail', @level2type = N'COLUMN',@level2name = N'BasicAmount'
+GO
+
+EXEC sys.sp_addextendedproperty @name = N'MS_Description', @value = N'過不足精算上限名' , @level0type = N'SCHEMA',@level0name = N'dbo', @level1type = N'TABLE',@level1name = N'T_BillingDetail', @level2type = N'COLUMN',@level2name = N'SettlementUpperLimitName'
+GO
+
+EXEC sys.sp_addextendedproperty @name = N'MS_Description', @value = N'過不足精算上限' , @level0type = N'SCHEMA',@level0name = N'dbo', @level1type = N'TABLE',@level1name = N'T_BillingDetail', @level2type = N'COLUMN',@level2name = N'SettlementUpperLimit'
+GO
+
+EXEC sys.sp_addextendedproperty @name = N'MS_Description', @value = N'過不足精算下限名' , @level0type = N'SCHEMA',@level0name = N'dbo', @level1type = N'TABLE',@level1name = N'T_BillingDetail', @level2type = N'COLUMN',@level2name = N'SettlementLowerLimitName'
+GO
+
+EXEC sys.sp_addextendedproperty @name = N'MS_Description', @value = N'過不足精算下限' , @level0type = N'SCHEMA',@level0name = N'dbo', @level1type = N'TABLE',@level1name = N'T_BillingDetail', @level2type = N'COLUMN',@level2name = N'SettlementLowerLimit'
+GO
+
+EXEC sys.sp_addextendedproperty @name = N'MS_Description', @value = N'過不足金額' , @level0type = N'SCHEMA',@level0name = N'dbo', @level1type = N'TABLE',@level1name = N'T_BillingDetail', @level2type = N'COLUMN',@level2name = N'SettlementAmount'
+GO
+
+EXEC sys.sp_addextendedproperty @name = N'MS_Description', @value = N'請求金額' , @level0type = N'SCHEMA',@level0name = N'dbo', @level1type = N'TABLE',@level1name = N'T_BillingDetail', @level2type = N'COLUMN',@level2name = N'BillingAmount'
+GO
+
+EXEC sys.sp_addextendedproperty @name = N'MS_Description', @value = N'削除フラグ' , @level0type = N'SCHEMA',@level0name = N'dbo', @level1type = N'TABLE',@level1name = N'T_BillingDetail', @level2type = N'COLUMN',@level2name = N'DeleteFlag'
+GO
+
+EXEC sys.sp_addextendedproperty @name = N'MS_Description', @value = N'登録ユーザー' , @level0type = N'SCHEMA',@level0name = N'dbo', @level1type = N'TABLE',@level1name = N'T_BillingDetail', @level2type = N'COLUMN',@level2name = N'CreatUserID'
+GO
+
+EXEC sys.sp_addextendedproperty @name = N'MS_Description', @value = N'登録日時' , @level0type = N'SCHEMA',@level0name = N'dbo', @level1type = N'TABLE',@level1name = N'T_BillingDetail', @level2type = N'COLUMN',@level2name = N'CreatDateTime'
+GO
+
+EXEC sys.sp_addextendedproperty @name = N'MS_Description', @value = N'更新ユーザー' , @level0type = N'SCHEMA',@level0name = N'dbo', @level1type = N'TABLE',@level1name = N'T_BillingDetail', @level2type = N'COLUMN',@level2name = N'UpdateUserID'
+GO
+
+EXEC sys.sp_addextendedproperty @name = N'MS_Description', @value = N'更新日時' , @level0type = N'SCHEMA',@level0name = N'dbo', @level1type = N'TABLE',@level1name = N'T_BillingDetail', @level2type = N'COLUMN',@level2name = N'UpdateDateTime'
+GO
+
+EXEC sys.sp_addextendedproperty @name = N'MS_Description', @value = N'LockVer' , @level0type = N'SCHEMA',@level0name = N'dbo', @level1type = N'TABLE',@level1name = N'T_BillingDetail', @level2type = N'COLUMN',@level2name = N'LockVer'
+GO
+
+EXEC sys.sp_addextendedproperty @name = N'MS_Description', @value = N'請求書明細' , @level0type = N'SCHEMA',@level0name = N'dbo', @level1type = N'TABLE',@level1name = N'T_BillingDetail'
+GO
+
