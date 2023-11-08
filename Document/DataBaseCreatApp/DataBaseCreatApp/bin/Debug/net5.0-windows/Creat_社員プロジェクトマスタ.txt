@@ -22,10 +22,10 @@ CREATE TABLE [dbo].[M_EmployeeProject](
 	[BasicAmount] [int] NOT NULL,
 	[Note] [nvarchar] (500) NULL,
 	[DeleteFlag] [int] NOT NULL DEFAULT (0),
-	[CreatUserID] [bigint] (4) NULL,
+	[CreatUserID] [bigint]  NULL,
 	[CreatDateTime] [datetime2] NULL,
-	[UpdateUserID] [bigint] (50) NULL,
-	[UpdateDateTime] [datetime2] (500) NULL,
+	[UpdateUserID] [bigint]  NULL,
+	[UpdateDateTime] [datetime2]  NULL,
 	[LockVer] [int] NOT NULL DEFAULT (0),
 	CONSTRAINT PK_M_EmployeeProject PRIMARY KEY CLUSTERED ([ID] ASC) WITH (
 		 PAD_INDEX = OFF,
