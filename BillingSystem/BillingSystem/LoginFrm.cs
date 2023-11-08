@@ -55,8 +55,8 @@ namespace BillingSystem
                 //    MessageBox.Show(msg); ;
                 //}
 
-                if (this.TxtUserID.Text.Equals("test") && this.TxtPassword.Text.Equals("12345"))
-                {
+                //if (this.TxtUserID.Text.Equals("test") && this.TxtPassword.Text.Equals("12345"))
+                //{
                     // ログイン正常の場合、アカウント情報設定する
                     AccountInfo.UserID = "DB値";
                     AccountInfo.UserName = "DB値";
@@ -64,12 +64,12 @@ namespace BillingSystem
                     this.Hide();
                     SeikyuFrm seikyu = new SeikyuFrm();
                     seikyu.Show();
-                }
-                else
-                {
-                    string msg = myMsgIni.GetString(ConstCommon.MESSAGE, ConstCommon.IMG0001);
-                    MessageBox.Show(msg); ;
-                }
+                //}
+                //else
+                //{
+                //    string msg = myMsgIni.GetString(ConstCommon.MESSAGE, ConstCommon.IMG0001);
+                //    MessageBox.Show(msg); ;
+                //}
             }
             catch (Exception ex)
             {
