@@ -2,6 +2,7 @@
 using BillingSystem.Common;
 using Common;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
@@ -10,81 +11,173 @@ using System.Runtime.InteropServices;
 using System.Runtime.InteropServices.ComTypes;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using static BillingSystem.Enumerations.EnumCls;
 
 
 namespace BillingSystem
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public partial class SeikyuFrm : BaseFrm
     {
+        int totalRecord = 0;
+        int appearRecord = 0;
         public SeikyuFrm()
         {
             InitializeComponent();
 
-    
+            //コンボボックスに追加
+            CbbxBillingRecipient.Items.Add("全て");
+            CbbxBillingRecipient.SelectedItem = "全て";
             
             // SQLクエリ
             string query = "SELECT CustomerName FROM M_Customer";
 
-            List<Dictionary<string, object>> sql = ExecuteQuery(query);
+            DataTable sql = ExecuteQuery(query);
 
-            foreach (var row in sql)
+
+            foreach (DataRow row in sql.Rows)
             {
                 // Dictionary内の特定のキーを指定して値を取得し、コンボボックスに追加
-                if (row.ContainsKey("CustomerName")) 
+                if (row.Table.Columns.Contains("CustomerName")) 
                 {
-                    BillingRecipient.Items.Add(row["CustomerName"]); 
+                    CbbxBillingRecipient.Items.Add(row["CustomerName"].ToString()); 
                 }
             }
 
-            query = "SELECT\r\n    [BillingDate]" +
-                "                              \r\n    , [BillingNo]" +
-                "                               \r\n    , [CustomerName]" +
-                "                            \r\n    , [PaymentType]" +
-                "                             \r\n    , [BillingAmount]" +
-                "                           \r\n    , [BillingTax]" +
-                "                              \r\n    , [TransportationAmount]" +
-                "                    \r\n    , [BillingTotal]" +
-                "                            \r\nFROM\r\n    [dbo].[T_Billing] ";
+            query = @"SELECT
+                        [BillingDate]
+                        , [BillingNo]
+                        , [BranchNo]
+                        , [CustomerName]
+                        , [PaymentType]
+                        , [BillingAmount]
+                        , [BillingTax]
+                        , [TransportationAmount]
+                        , [BillingTotal]
+                                FROM
+                        [dbo].[T_Billing] ";
 
-            List<Dictionary<string,object>> bills = ExecuteQuery(query);
+            DataTable bills = ExecuteQuery(query);
 
+            //表示件数
+            LblDisplayCount.Text = (bills.Rows.Count).ToString();
 
-            DataTable dataTable = new DataTable();
-
-            // billsの最初の要素から列を作成
-            if (bills.Count > 0)
-            {
-                foreach (var key in bills[0].Keys)
-                {
-                    dataTable.Columns.Add(key, typeof(object)); // 適切なデータ型を指定
-                }
-
-                // billsの各行をDataTableに追加
-                foreach (var row in bills)
-                {
-                    DataRow dataRow = dataTable.NewRow();
-                    foreach (var key in row.Keys)
-                    {
-                        dataRow[key] = row[key];
-                    }
-                    dataTable.Rows.Add(dataRow);
-                }
-            }
+            dataFormat();
 
             //データバインド
-            BillingInfoGridView.DataSource =dataTable;
+            DgbBillingInfoGridView.DataSource =bills;
 
             base.LblProcessName.Text = "請求書検索";
             base.LblLoginUserName.Text = AccountInfo.UserName;
 
+            //開始日時の初期値を今月の1日
+            DtbBillingStartDate.Format = DateTimePickerFormat.Custom;
+            DtbBillingStartDate.CustomFormat = "yyyy年MM月dd日";
+            DtbBillingStartDate.Value = new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1);
+            DtbBillingEndDate.MinDate = new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1);
+
+            DtbBillingStartDate.Text = DtbBillingStartDate.Value.ToString("yyyy年MM月dd日");
+
+            //終了日時の初期値を今月の最終日に
+            DtbBillingEndDate.Format = DateTimePickerFormat.Custom;
+            DtbBillingEndDate.CustomFormat = "yyyy年MM月dd日";
+            DateTime today = DateTime.Today;
+            DtbBillingEndDate.Value = new DateTime(today.Year, today.Month, DateTime.DaysInMonth(today.Year, today.Month));
+            DtbBillingEndDate.Text = DtbBillingEndDate.Value.ToString("yyyy年MM月dd日");
+
+            query = "SELECT ID FROM T_Billing";
+
+            //総表示数
+            DataTable total = ExecuteQuery(query);
+            string columnName = "ID";
+            object count = total.Compute("COUNT(" + columnName + ")", "");
+            int elementCount = Convert.ToInt32(count);
+            LblTotalCount.Text = elementCount.ToString();
+
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void searchButton(object sender, EventArgs e)
         {
+            //請求開始日時取得
+            string billingStartDateText = DtbBillingStartDate.Text;
+            DateTime billingStartDate = DateTime.Parse(billingStartDateText);
+            billingStartDateText = billingStartDate.ToString("yyyy-MM-d");
+
+            //請求終了日時取得
+            string billingEndDateText = DtbBillingEndDate.Text;
+            DateTime billingEndDate = DateTime.Parse(billingEndDateText);
+            billingEndDateText = billingEndDate.ToString("yyyy-MM-d");
+
+            //選択された請求先取得
+            var selectedBillingRecipient = CbbxBillingRecipient.SelectedItem.ToString();
+            selectedBillingRecipient = $"\'{selectedBillingRecipient}\'";
+
+            if(CbbxBillingRecipient.SelectedItem.ToString() == "全て")
+            {
+                selectedBillingRecipient = "CustomerName";
+            }
+
+            string appearCheck = null;
+            string showDeleted = CkbxShowDeleted.Checked.ToString();
+
+            //削除済み表示確認
+            if(showDeleted == disappearDeleted.Name)
+            {
+                appearCheck = disappearDeleted.Id.ToString();
+            }else if(showDeleted == appearDeleted.Name) 
+            {
+                appearCheck = appearDeleted.ShortName;
+            }
+
+            string query = $@"SELECT
+                            [BillingDate]
+                            , [BillingNo]
+                            , [BranchNo]
+                            , [CustomerName]
+                            , [PaymentType]
+                            , [BillingAmount]
+                            , [BillingTax]
+                            , [TransportationAmount]
+                            , [BillingTotal]
+                        FROM
+                            [dbo].[T_Billing] 
+                        WHERE
+                            BillingDate BETWEEN '{billingStartDateText}' AND '{billingEndDateText}' 
+                            AND DeleteFlag = '0' 
+                            AND CustomerName = {selectedBillingRecipient}";
+
+            DataTable bills = ExecuteQuery(query);
+            LblDisplayCount.Text = (bills.Rows.Count).ToString();
+
+            DgbBillingInfoGridView.DataSource = bills;
+
             // ログ出力
             log.Info("test");
-            // メッセージ取得
-            string test = myMsgIni.GetString(ConstCommon.MESSAGE, ConstCommon.IMG0002);
+        }
+
+        /// <summary>
+        /// グリットビューのデータフォーマットを整える
+        /// </summary>
+        public void dataFormat()
+        {
+            foreach (DataGridViewColumn column in DgbBillingInfoGridView.Columns)
+            {
+                if (column.DataPropertyName == "BillingNo" || column.DataPropertyName == "BillingAmount" || column.DataPropertyName == "BillingTax" || column.DataPropertyName == "TransportationAmount" || column.DataPropertyName == "BillingTotal" || column.DataPropertyName == "PaymentType")
+                {
+                    column.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+                    column.DefaultCellStyle.Format = "N0";
+                }
+                else if (column.DataPropertyName == "CustomerName")
+                {
+                    column.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+                }
+                else
+                {
+                    column.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                }
+            }
         }
 
         /// <summary>
@@ -92,11 +185,10 @@ namespace BillingSystem
         /// </summary>
         /// <param name="query"></param>
         /// <returns></returns>
-        public List<Dictionary<string, object>> ExecuteQuery(string query)
+        public DataTable ExecuteQuery(string query)
         {
-            List<Dictionary<string, object>> result = new List<Dictionary<string, object>>();
+            DataTable resultTable = new DataTable();
             string connectionString = "Data Source=10.20.1.9;Initial Catalog=SEIKYUSHO_TEST;User ID=sa;Password=meisen@2022";
-
             try
             {
                 using (SqlConnection connection = new SqlConnection(connectionString))
@@ -106,16 +198,50 @@ namespace BillingSystem
                         connection.Open();
                         using (SqlDataReader reader = command.ExecuteReader())
                         {
+                            //テーブルヘッダー追加
+                            for (int i = 0; i < reader.FieldCount; i++)
+                            {
+                                string columnName = reader.GetName(i);
+                                if (columnName == "BranchNo")
+                                {
+                                    continue;
+                                }
+                                resultTable.Columns.Add(reader.GetName(i));
+                                totalRecord++;
+                            }
+
                             while (reader.Read())
                             {
-                                Dictionary<string, object> row = new Dictionary<string, object>();
+                                // データリーダーの行をデータテーブルに追加
+                                DataRow row = resultTable.NewRow();
+                                //テーブル中身追加
                                 for (int i = 0; i < reader.FieldCount; i++)
                                 {
                                     string columnName = reader.GetName(i);
+                                    if(columnName == "BranchNo")
+                                    {
+                                        continue;
+                                    }
                                     object value = reader[i];
-                                    row[columnName] = value;
+
+                                    // 数値データをカンマを挿入した文字列に変換
+                                    if (value is decimal || value is int)
+                                    {
+                                        row[columnName] = string.Format("{0:N0}", value);
+                                    }
+                                    else if(value is DateTime){
+                                        row[columnName] = ((DateTime)value).ToString("yyyy/MM/dd");
+                                        appearRecord++;
+                                    }
+                                    else
+                                    {
+                                        row[columnName] = value; // 数値以外はそのままセット
+                                    }
+
+
                                 }
-                                result.Add(row);
+                                appearRecord = reader.FieldCount;
+                                resultTable.Rows.Add(row);
                             }
                         }
                     }
@@ -128,9 +254,14 @@ namespace BillingSystem
                 Console.WriteLine("エラー: " + ex.Message);
             }
 
-            return result;
+            return resultTable;
         }
 
+        private void changeStartDate(object sender, EventArgs e)
+        {
+            DateTime startDate = DtbBillingStartDate.Value;
+            DtbBillingEndDate.MinDate = startDate;
+        }
 
     }
 }

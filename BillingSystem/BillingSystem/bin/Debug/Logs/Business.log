@@ -10,3 +10,136 @@
 2023-11-08 14:15:46,799  INFO（BillingSystem.SeikyuFrm:button1_Click）-test
 2023-11-08 14:15:47,047  INFO（BillingSystem.SeikyuFrm:button1_Click）-test
 2023-11-08 14:15:47,416  INFO（BillingSystem.SeikyuFrm:button1_Click）-test
+2023-11-09 09:28:59,759  INFO（BillingSystem.SeikyuFrm:button1_Click）-test
+2023-11-09 09:56:06,414  INFO（BillingSystem.SeikyuFrm:button1_Click）-test
+2023-11-09 10:01:01,250  INFO（BillingSystem.SeikyuFrm:button1_Click）-test
+2023-11-09 10:09:29,133  INFO（BillingSystem.SeikyuFrm:ExecuteQuery）-入力配列がこのテーブルの列数より長い値です。
+2023-11-09 10:09:29,159  INFO（BillingSystem.SeikyuFrm:ExecuteQuery）-入力配列がこのテーブルの列数より長い値です。
+2023-11-09 10:10:10,365  INFO（BillingSystem.SeikyuFrm:ExecuteQuery）-入力配列がこのテーブルの列数より長い値です。
+2023-11-09 10:10:10,378  INFO（BillingSystem.SeikyuFrm:ExecuteQuery）-入力配列がこのテーブルの列数より長い値です。
+2023-11-09 10:10:59,241  INFO（BillingSystem.SeikyuFrm:ExecuteQuery）-入力配列がこのテーブルの列数より長い値です。
+2023-11-09 10:11:00,780  INFO（BillingSystem.SeikyuFrm:ExecuteQuery）-入力配列がこのテーブルの列数より長い値です。
+2023-11-09 10:11:52,770  INFO（BillingSystem.SeikyuFrm:ExecuteQuery）-入力配列がこのテーブルの列数より長い値です。
+2023-11-09 10:11:53,611  INFO（BillingSystem.SeikyuFrm:ExecuteQuery）-入力配列がこのテーブルの列数より長い値です。
+2023-11-09 10:15:59,771  INFO（BillingSystem.SeikyuFrm:ExecuteQuery）-入力配列がこのテーブルの列数より長い値です。
+2023-11-09 10:51:07,731  INFO（BillingSystem.SeikyuFrm:searchButton）-test
+2023-11-09 10:58:28,790  INFO（BillingSystem.SeikyuFrm:searchButton）-test
+2023-11-09 10:58:32,223  INFO（BillingSystem.SeikyuFrm:searchButton）-test
+2023-11-09 10:58:32,674  INFO（BillingSystem.SeikyuFrm:searchButton）-test
+2023-11-09 10:58:32,866  INFO（BillingSystem.SeikyuFrm:searchButton）-test
+2023-11-09 10:58:34,631  INFO（BillingSystem.SeikyuFrm:searchButton）-test
+2023-11-09 10:58:34,823  INFO（BillingSystem.SeikyuFrm:searchButton）-test
+2023-11-09 10:58:35,232  INFO（BillingSystem.SeikyuFrm:searchButton）-test
+2023-11-09 10:58:35,407  INFO（BillingSystem.SeikyuFrm:searchButton）-test
+2023-11-09 10:58:36,900  INFO（BillingSystem.SeikyuFrm:searchButton）-test
+2023-11-09 10:59:42,972  INFO（BillingSystem.SeikyuFrm:ExecuteQuery）-列名 'False' が無効です。
+2023-11-09 10:59:42,972  INFO（BillingSystem.SeikyuFrm:searchButton）-test
+2023-11-09 10:59:44,525  INFO（BillingSystem.SeikyuFrm:ExecuteQuery）-列名 'False' が無効です。
+2023-11-09 10:59:44,525  INFO（BillingSystem.SeikyuFrm:searchButton）-test
+2023-11-09 11:00:00,415  INFO（BillingSystem.SeikyuFrm:ExecuteQuery）-列名 'False' が無効です。
+2023-11-09 11:03:55,876  INFO（BillingSystem.SeikyuFrm:ExecuteQuery）-列名 'False' が無効です。
+2023-11-09 11:03:57,368  INFO（BillingSystem.SeikyuFrm:searchButton）-test
+2023-11-09 11:29:51,250  INFO（BillingSystem.SeikyuFrm:ExecuteQuery）-キーワード 'AND' 付近に不適切な構文があります。
+2023-11-09 11:29:52,873  INFO（BillingSystem.SeikyuFrm:searchButton）-test
+2023-11-09 11:31:22,903  INFO（BillingSystem.SeikyuFrm:ExecuteQuery）-キーワード 'AND' 付近に不適切な構文があります。
+2023-11-09 11:31:22,903  INFO（BillingSystem.SeikyuFrm:searchButton）-test
+2023-11-09 11:38:53,423  INFO（BillingSystem.SeikyuFrm:ExecuteQuery）-キーワード 'AND' 付近に不適切な構文があります。
+2023-11-09 11:38:53,464  INFO（BillingSystem.SeikyuFrm:searchButton）-test
+2023-11-09 11:41:47,749  INFO（BillingSystem.SeikyuFrm:ExecuteQuery）-キーワード 'AND' 付近に不適切な構文があります。
+2023-11-09 11:41:49,276  INFO（BillingSystem.SeikyuFrm:searchButton）-test
+2023-11-09 12:07:32,715  INFO（BillingSystem.SeikyuFrm:ExecuteQuery）-文字列から日付と時刻、またはそのいずれかへの変換中に、変換が失敗しました。
+2023-11-09 12:07:32,715  INFO（BillingSystem.SeikyuFrm:searchButton）-test
+2023-11-09 12:08:08,380  INFO（BillingSystem.SeikyuFrm:ExecuteQuery）-文字列から日付と時刻、またはそのいずれかへの変換中に、変換が失敗しました。
+2023-11-09 12:08:08,395  INFO（BillingSystem.SeikyuFrm:searchButton）-test
+2023-11-09 12:08:09,368  INFO（BillingSystem.SeikyuFrm:ExecuteQuery）-文字列から日付と時刻、またはそのいずれかへの変換中に、変換が失敗しました。
+2023-11-09 12:08:09,375  INFO（BillingSystem.SeikyuFrm:searchButton）-test
+2023-11-09 12:08:09,730  INFO（BillingSystem.SeikyuFrm:ExecuteQuery）-文字列から日付と時刻、またはそのいずれかへの変換中に、変換が失敗しました。
+2023-11-09 12:08:09,740  INFO（BillingSystem.SeikyuFrm:searchButton）-test
+2023-11-09 12:08:09,930  INFO（BillingSystem.SeikyuFrm:ExecuteQuery）-文字列から日付と時刻、またはそのいずれかへの変換中に、変換が失敗しました。
+2023-11-09 12:08:09,943  INFO（BillingSystem.SeikyuFrm:searchButton）-test
+2023-11-09 12:08:10,130  INFO（BillingSystem.SeikyuFrm:ExecuteQuery）-文字列から日付と時刻、またはそのいずれかへの変換中に、変換が失敗しました。
+2023-11-09 12:08:10,143  INFO（BillingSystem.SeikyuFrm:searchButton）-test
+2023-11-09 12:08:10,311  INFO（BillingSystem.SeikyuFrm:ExecuteQuery）-文字列から日付と時刻、またはそのいずれかへの変換中に、変換が失敗しました。
+2023-11-09 12:08:10,325  INFO（BillingSystem.SeikyuFrm:searchButton）-test
+2023-11-09 12:08:10,484  INFO（BillingSystem.SeikyuFrm:ExecuteQuery）-文字列から日付と時刻、またはそのいずれかへの変換中に、変換が失敗しました。
+2023-11-09 12:08:10,494  INFO（BillingSystem.SeikyuFrm:searchButton）-test
+2023-11-09 12:08:10,640  INFO（BillingSystem.SeikyuFrm:ExecuteQuery）-文字列から日付と時刻、またはそのいずれかへの変換中に、変換が失敗しました。
+2023-11-09 12:08:10,648  INFO（BillingSystem.SeikyuFrm:searchButton）-test
+2023-11-09 12:08:13,270  INFO（BillingSystem.SeikyuFrm:ExecuteQuery）-文字列から日付と時刻、またはそのいずれかへの変換中に、変換が失敗しました。
+2023-11-09 12:08:13,283  INFO（BillingSystem.SeikyuFrm:searchButton）-test
+2023-11-09 12:08:13,716  INFO（BillingSystem.SeikyuFrm:ExecuteQuery）-文字列から日付と時刻、またはそのいずれかへの変換中に、変換が失敗しました。
+2023-11-09 12:08:13,731  INFO（BillingSystem.SeikyuFrm:searchButton）-test
+2023-11-09 12:08:13,892  INFO（BillingSystem.SeikyuFrm:ExecuteQuery）-文字列から日付と時刻、またはそのいずれかへの変換中に、変換が失敗しました。
+2023-11-09 12:08:13,900  INFO（BillingSystem.SeikyuFrm:searchButton）-test
+2023-11-09 12:08:14,060  INFO（BillingSystem.SeikyuFrm:ExecuteQuery）-文字列から日付と時刻、またはそのいずれかへの変換中に、変換が失敗しました。
+2023-11-09 12:08:14,066  INFO（BillingSystem.SeikyuFrm:searchButton）-test
+2023-11-09 12:08:14,239  INFO（BillingSystem.SeikyuFrm:ExecuteQuery）-文字列から日付と時刻、またはそのいずれかへの変換中に、変換が失敗しました。
+2023-11-09 12:08:14,248  INFO（BillingSystem.SeikyuFrm:searchButton）-test
+2023-11-09 12:08:14,421  INFO（BillingSystem.SeikyuFrm:ExecuteQuery）-文字列から日付と時刻、またはそのいずれかへの変換中に、変換が失敗しました。
+2023-11-09 12:08:14,424  INFO（BillingSystem.SeikyuFrm:searchButton）-test
+2023-11-09 12:08:17,104  INFO（BillingSystem.SeikyuFrm:ExecuteQuery）-文字列から日付と時刻、またはそのいずれかへの変換中に、変換が失敗しました。
+2023-11-09 12:08:17,126  INFO（BillingSystem.SeikyuFrm:searchButton）-test
+2023-11-09 12:08:24,793  INFO（BillingSystem.SeikyuFrm:ExecuteQuery）-文字列から日付と時刻、またはそのいずれかへの変換中に、変換が失敗しました。
+2023-11-09 12:08:24,810  INFO（BillingSystem.SeikyuFrm:searchButton）-test
+2023-11-09 12:08:25,230  INFO（BillingSystem.SeikyuFrm:ExecuteQuery）-文字列から日付と時刻、またはそのいずれかへの変換中に、変換が失敗しました。
+2023-11-09 12:08:25,240  INFO（BillingSystem.SeikyuFrm:searchButton）-test
+2023-11-09 12:08:25,405  INFO（BillingSystem.SeikyuFrm:ExecuteQuery）-文字列から日付と時刻、またはそのいずれかへの変換中に、変換が失敗しました。
+2023-11-09 12:08:25,420  INFO（BillingSystem.SeikyuFrm:searchButton）-test
+2023-11-09 12:33:06,030  INFO（BillingSystem.SeikyuFrm:searchButton）-test
+2023-11-09 12:33:11,570  INFO（BillingSystem.SeikyuFrm:searchButton）-test
+2023-11-09 12:33:12,170  INFO（BillingSystem.SeikyuFrm:searchButton）-test
+2023-11-09 12:33:13,993  INFO（BillingSystem.SeikyuFrm:searchButton）-test
+2023-11-09 12:34:06,890  INFO（BillingSystem.SeikyuFrm:searchButton）-test
+2023-11-09 12:34:11,441  INFO（BillingSystem.SeikyuFrm:searchButton）-test
+2023-11-09 13:10:30,454  INFO（BillingSystem.SeikyuFrm:searchButton）-test
+2023-11-09 13:10:33,079  INFO（BillingSystem.SeikyuFrm:searchButton）-test
+2023-11-09 13:10:34,390  INFO（BillingSystem.SeikyuFrm:searchButton）-test
+2023-11-09 13:10:49,972  INFO（BillingSystem.SeikyuFrm:searchButton）-test
+2023-11-09 13:16:45,092  INFO（BillingSystem.SeikyuFrm:searchButton）-test
+2023-11-09 13:16:45,768  INFO（BillingSystem.SeikyuFrm:searchButton）-test
+2023-11-09 13:16:45,984  INFO（BillingSystem.SeikyuFrm:searchButton）-test
+2023-11-09 13:17:33,559  INFO（BillingSystem.SeikyuFrm:searchButton）-test
+2023-11-09 13:17:34,900  INFO（BillingSystem.SeikyuFrm:searchButton）-test
+2023-11-09 13:17:35,221  INFO（BillingSystem.SeikyuFrm:searchButton）-test
+2023-11-09 13:17:35,451  INFO（BillingSystem.SeikyuFrm:searchButton）-test
+2023-11-09 13:17:35,849  INFO（BillingSystem.SeikyuFrm:searchButton）-test
+2023-11-09 13:17:36,051  INFO（BillingSystem.SeikyuFrm:searchButton）-test
+2023-11-09 13:20:44,819  INFO（BillingSystem.SeikyuFrm:searchButton）-test
+2023-11-09 13:20:45,516  INFO（BillingSystem.SeikyuFrm:searchButton）-test
+2023-11-09 13:20:45,920  INFO（BillingSystem.SeikyuFrm:searchButton）-test
+2023-11-09 13:20:46,142  INFO（BillingSystem.SeikyuFrm:searchButton）-test
+2023-11-09 13:20:53,923  INFO（BillingSystem.SeikyuFrm:searchButton）-test
+2023-11-09 13:20:54,445  INFO（BillingSystem.SeikyuFrm:searchButton）-test
+2023-11-09 13:20:54,637  INFO（BillingSystem.SeikyuFrm:searchButton）-test
+2023-11-09 13:20:54,994  INFO（BillingSystem.SeikyuFrm:searchButton）-test
+2023-11-09 13:20:57,450  INFO（BillingSystem.SeikyuFrm:searchButton）-test
+2023-11-09 13:21:01,019  INFO（BillingSystem.SeikyuFrm:searchButton）-test
+2023-11-09 13:29:50,887  INFO（BillingSystem.SeikyuFrm:ExecuteQuery）-列名 'test' が無効です。
+2023-11-09 13:29:50,893  INFO（BillingSystem.SeikyuFrm:searchButton）-test
+2023-11-09 13:29:52,241  INFO（BillingSystem.SeikyuFrm:ExecuteQuery）-列名 'test' が無効です。
+2023-11-09 13:29:52,242  INFO（BillingSystem.SeikyuFrm:searchButton）-test
+2023-11-09 13:29:56,405  INFO（BillingSystem.SeikyuFrm:ExecuteQuery）-列名 '全て' が無効です。
+2023-11-09 13:29:56,406  INFO（BillingSystem.SeikyuFrm:searchButton）-test
+2023-11-09 13:29:56,943  INFO（BillingSystem.SeikyuFrm:ExecuteQuery）-列名 '全て' が無効です。
+2023-11-09 13:29:56,947  INFO（BillingSystem.SeikyuFrm:searchButton）-test
+2023-11-09 13:29:57,146  INFO（BillingSystem.SeikyuFrm:ExecuteQuery）-列名 '全て' が無効です。
+2023-11-09 13:29:57,148  INFO（BillingSystem.SeikyuFrm:searchButton）-test
+2023-11-09 13:29:57,509  INFO（BillingSystem.SeikyuFrm:ExecuteQuery）-列名 '全て' が無効です。
+2023-11-09 13:29:57,510  INFO（BillingSystem.SeikyuFrm:searchButton）-test
+2023-11-09 13:29:57,724  INFO（BillingSystem.SeikyuFrm:ExecuteQuery）-列名 '全て' が無効です。
+2023-11-09 13:29:57,725  INFO（BillingSystem.SeikyuFrm:searchButton）-test
+2023-11-09 13:29:57,924  INFO（BillingSystem.SeikyuFrm:ExecuteQuery）-列名 '全て' が無効です。
+2023-11-09 13:29:57,925  INFO（BillingSystem.SeikyuFrm:searchButton）-test
+2023-11-09 13:29:58,355  INFO（BillingSystem.SeikyuFrm:ExecuteQuery）-列名 '全て' が無効です。
+2023-11-09 13:29:58,356  INFO（BillingSystem.SeikyuFrm:searchButton）-test
+2023-11-09 13:30:53,036  INFO（BillingSystem.SeikyuFrm:ExecuteQuery）-列名 'test' が無効です。
+2023-11-09 13:35:22,565  INFO（BillingSystem.SeikyuFrm:ExecuteQuery）-列名 'test' が無効です。
+2023-11-09 13:35:30,820  INFO（BillingSystem.SeikyuFrm:searchButton）-test
+2023-11-09 13:37:24,811  INFO（BillingSystem.SeikyuFrm:searchButton）-test
+2023-11-09 13:37:38,664  INFO（BillingSystem.SeikyuFrm:searchButton）-test
+2023-11-09 13:38:58,899  INFO（BillingSystem.SeikyuFrm:searchButton）-test
+2023-11-09 14:27:46,758  INFO（BillingSystem.SeikyuFrm:searchButton）-test
+2023-11-09 17:13:22,279  INFO（BillingSystem.SeikyuFrm:searchButton）-test
+2023-11-09 17:14:35,043  INFO（BillingSystem.SeikyuFrm:searchButton）-test
+2023-11-09 17:54:51,619  INFO（BillingSystem.SeikyuFrm:ExecuteQuery）-列 'BranchNo' はテーブル  に属していません。
+2023-11-09 17:57:10,205  INFO（BillingSystem.SeikyuFrm:ExecuteQuery）-列 'BranchNo' はテーブル  に属していません。

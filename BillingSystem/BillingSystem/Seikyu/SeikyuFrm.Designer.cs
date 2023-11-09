@@ -29,24 +29,24 @@
         private void InitializeComponent()
         {
             this.panel3 = new System.Windows.Forms.Panel();
-            this.SearchButton = new System.Windows.Forms.Button();
-            this.ApproveByManager = new System.Windows.Forms.CheckBox();
-            this.ApproveBySupervisor = new System.Windows.Forms.CheckBox();
-            this.ShowDeleted = new System.Windows.Forms.CheckBox();
-            this.BillingEndDate = new System.Windows.Forms.DateTimePicker();
-            this.BillingStartDate = new System.Windows.Forms.DateTimePicker();
-            this.BillingRecipient = new System.Windows.Forms.ComboBox();
+            this.BtnSearchButton = new System.Windows.Forms.Button();
+            this.CkbxApproveByManager = new System.Windows.Forms.CheckBox();
+            this.CkbxApproveBySupervisor = new System.Windows.Forms.CheckBox();
+            this.CkbxShowDeleted = new System.Windows.Forms.CheckBox();
+            this.DtbBillingEndDate = new System.Windows.Forms.DateTimePicker();
+            this.DtbBillingStartDate = new System.Windows.Forms.DateTimePicker();
+            this.CbbxBillingRecipient = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.PreviousButton = new System.Windows.Forms.Button();
-            this.NextButton = new System.Windows.Forms.Button();
+            this.BtnPreviousButton = new System.Windows.Forms.Button();
+            this.BtnNextButton = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
-            this.TotalCount = new System.Windows.Forms.Label();
-            this.DisplayCount = new System.Windows.Forms.Label();
-            this.BillingInfoGridView = new System.Windows.Forms.DataGridView();
+            this.LblTotalCount = new System.Windows.Forms.Label();
+            this.LblDisplayCount = new System.Windows.Forms.Label();
+            this.DgbBillingInfoGridView = new System.Windows.Forms.DataGridView();
             this.BillingDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PaymentType = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CustomerName = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -57,7 +57,7 @@
             this.BillingTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.BillingInfoGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DgbBillingInfoGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // LblLoginUserName
@@ -66,13 +66,13 @@
             // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.SearchButton);
-            this.panel3.Controls.Add(this.ApproveByManager);
-            this.panel3.Controls.Add(this.ApproveBySupervisor);
-            this.panel3.Controls.Add(this.ShowDeleted);
-            this.panel3.Controls.Add(this.BillingEndDate);
-            this.panel3.Controls.Add(this.BillingStartDate);
-            this.panel3.Controls.Add(this.BillingRecipient);
+            this.panel3.Controls.Add(this.BtnSearchButton);
+            this.panel3.Controls.Add(this.CkbxApproveByManager);
+            this.panel3.Controls.Add(this.CkbxApproveBySupervisor);
+            this.panel3.Controls.Add(this.CkbxShowDeleted);
+            this.panel3.Controls.Add(this.DtbBillingEndDate);
+            this.panel3.Controls.Add(this.DtbBillingStartDate);
+            this.panel3.Controls.Add(this.CbbxBillingRecipient);
             this.panel3.Controls.Add(this.label4);
             this.panel3.Controls.Add(this.label2);
             this.panel3.Controls.Add(this.label3);
@@ -83,79 +83,81 @@
             this.panel3.Size = new System.Drawing.Size(1489, 135);
             this.panel3.TabIndex = 9;
             // 
-            // SearchButton
+            // BtnSearchButton
             // 
-            this.SearchButton.Location = new System.Drawing.Point(499, 86);
-            this.SearchButton.Margin = new System.Windows.Forms.Padding(4);
-            this.SearchButton.Name = "SearchButton";
-            this.SearchButton.Size = new System.Drawing.Size(120, 38);
-            this.SearchButton.TabIndex = 4;
-            this.SearchButton.Text = "検索";
-            this.SearchButton.UseVisualStyleBackColor = true;
-            this.SearchButton.Click += new System.EventHandler(this.button1_Click);
+            this.BtnSearchButton.Location = new System.Drawing.Point(502, 85);
+            this.BtnSearchButton.Margin = new System.Windows.Forms.Padding(4);
+            this.BtnSearchButton.Name = "BtnSearchButton";
+            this.BtnSearchButton.Size = new System.Drawing.Size(120, 38);
+            this.BtnSearchButton.TabIndex = 6;
+            this.BtnSearchButton.Text = "検索";
+            this.BtnSearchButton.UseVisualStyleBackColor = true;
+            this.BtnSearchButton.Click += new System.EventHandler(this.searchButton);
             // 
-            // ApproveByManager
+            // CkbxApproveByManager
             // 
-            this.ApproveByManager.AutoSize = true;
-            this.ApproveByManager.Location = new System.Drawing.Point(782, 16);
-            this.ApproveByManager.Margin = new System.Windows.Forms.Padding(4);
-            this.ApproveByManager.Name = "ApproveByManager";
-            this.ApproveByManager.Size = new System.Drawing.Size(134, 29);
-            this.ApproveByManager.TabIndex = 3;
-            this.ApproveByManager.Text = "管理承認済";
-            this.ApproveByManager.UseVisualStyleBackColor = true;
+            this.CkbxApproveByManager.AutoSize = true;
+            this.CkbxApproveByManager.Location = new System.Drawing.Point(821, 14);
+            this.CkbxApproveByManager.Margin = new System.Windows.Forms.Padding(4);
+            this.CkbxApproveByManager.Name = "CkbxApproveByManager";
+            this.CkbxApproveByManager.Size = new System.Drawing.Size(134, 29);
+            this.CkbxApproveByManager.TabIndex = 3;
+            this.CkbxApproveByManager.Text = "管理承認済";
+            this.CkbxApproveByManager.UseVisualStyleBackColor = true;
             // 
-            // ApproveBySupervisor
+            // CkbxApproveBySupervisor
             // 
-            this.ApproveBySupervisor.AutoSize = true;
-            this.ApproveBySupervisor.Location = new System.Drawing.Point(626, 16);
-            this.ApproveBySupervisor.Margin = new System.Windows.Forms.Padding(4);
-            this.ApproveBySupervisor.Name = "ApproveBySupervisor";
-            this.ApproveBySupervisor.Size = new System.Drawing.Size(154, 29);
-            this.ApproveBySupervisor.TabIndex = 3;
-            this.ApproveBySupervisor.Text = "担当者承認済";
-            this.ApproveBySupervisor.UseVisualStyleBackColor = true;
+            this.CkbxApproveBySupervisor.AutoSize = true;
+            this.CkbxApproveBySupervisor.Location = new System.Drawing.Point(659, 15);
+            this.CkbxApproveBySupervisor.Margin = new System.Windows.Forms.Padding(4);
+            this.CkbxApproveBySupervisor.Name = "CkbxApproveBySupervisor";
+            this.CkbxApproveBySupervisor.Size = new System.Drawing.Size(154, 29);
+            this.CkbxApproveBySupervisor.TabIndex = 2;
+            this.CkbxApproveBySupervisor.Text = "担当者承認済";
+            this.CkbxApproveBySupervisor.UseVisualStyleBackColor = true;
             // 
-            // ShowDeleted
+            // CkbxShowDeleted
             // 
-            this.ShowDeleted.AutoSize = true;
-            this.ShowDeleted.Location = new System.Drawing.Point(14, 94);
-            this.ShowDeleted.Margin = new System.Windows.Forms.Padding(4);
-            this.ShowDeleted.Name = "ShowDeleted";
-            this.ShowDeleted.Size = new System.Drawing.Size(129, 29);
-            this.ShowDeleted.TabIndex = 3;
-            this.ShowDeleted.Text = "削除も表示";
-            this.ShowDeleted.UseVisualStyleBackColor = true;
+            this.CkbxShowDeleted.AutoSize = true;
+            this.CkbxShowDeleted.Location = new System.Drawing.Point(14, 94);
+            this.CkbxShowDeleted.Margin = new System.Windows.Forms.Padding(4);
+            this.CkbxShowDeleted.Name = "CkbxShowDeleted";
+            this.CkbxShowDeleted.Size = new System.Drawing.Size(129, 29);
+            this.CkbxShowDeleted.TabIndex = 5;
+            this.CkbxShowDeleted.Text = "削除も表示";
+            this.CkbxShowDeleted.UseVisualStyleBackColor = true;
             // 
-            // BillingEndDate
+            // DtbBillingEndDate
             // 
-            this.BillingEndDate.Location = new System.Drawing.Point(335, 9);
-            this.BillingEndDate.Margin = new System.Windows.Forms.Padding(4);
-            this.BillingEndDate.Name = "BillingEndDate";
-            this.BillingEndDate.Size = new System.Drawing.Size(184, 33);
-            this.BillingEndDate.TabIndex = 2;
+            this.DtbBillingEndDate.Location = new System.Drawing.Point(352, 10);
+            this.DtbBillingEndDate.Margin = new System.Windows.Forms.Padding(4);
+            this.DtbBillingEndDate.Name = "DtbBillingEndDate";
+            this.DtbBillingEndDate.Size = new System.Drawing.Size(227, 33);
+            this.DtbBillingEndDate.TabIndex = 1;
             // 
-            // BillingStartDate
+            // DtbBillingStartDate
             // 
-            this.BillingStartDate.Location = new System.Drawing.Point(106, 9);
-            this.BillingStartDate.Margin = new System.Windows.Forms.Padding(4);
-            this.BillingStartDate.Name = "BillingStartDate";
-            this.BillingStartDate.Size = new System.Drawing.Size(184, 33);
-            this.BillingStartDate.TabIndex = 2;
+            this.DtbBillingStartDate.Location = new System.Drawing.Point(106, 9);
+            this.DtbBillingStartDate.Margin = new System.Windows.Forms.Padding(4);
+            this.DtbBillingStartDate.Name = "DtbBillingStartDate";
+            this.DtbBillingStartDate.Size = new System.Drawing.Size(198, 33);
+            this.DtbBillingStartDate.TabIndex = 0;
+            this.DtbBillingStartDate.ValueChanged += new System.EventHandler(this.changeStartDate);
             // 
-            // BillingRecipient
+            // CbbxBillingRecipient
             // 
-            this.BillingRecipient.FormattingEnabled = true;
-            this.BillingRecipient.Location = new System.Drawing.Point(106, 51);
-            this.BillingRecipient.Margin = new System.Windows.Forms.Padding(4);
-            this.BillingRecipient.Name = "BillingRecipient";
-            this.BillingRecipient.Size = new System.Drawing.Size(329, 33);
-            this.BillingRecipient.TabIndex = 1;
+            this.CbbxBillingRecipient.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CbbxBillingRecipient.FormattingEnabled = true;
+            this.CbbxBillingRecipient.Location = new System.Drawing.Point(106, 51);
+            this.CbbxBillingRecipient.Margin = new System.Windows.Forms.Padding(4);
+            this.CbbxBillingRecipient.Name = "CbbxBillingRecipient";
+            this.CbbxBillingRecipient.Size = new System.Drawing.Size(329, 33);
+            this.CbbxBillingRecipient.TabIndex = 4;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(570, 16);
+            this.label4.Location = new System.Drawing.Point(590, 15);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(52, 25);
@@ -175,7 +177,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(298, 16);
+            this.label3.Location = new System.Drawing.Point(312, 16);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(32, 25);
@@ -194,37 +196,37 @@
             // 
             // panel4
             // 
-            this.panel4.Controls.Add(this.PreviousButton);
-            this.panel4.Controls.Add(this.NextButton);
+            this.panel4.Controls.Add(this.BtnPreviousButton);
+            this.panel4.Controls.Add(this.BtnNextButton);
             this.panel4.Controls.Add(this.label6);
-            this.panel4.Controls.Add(this.TotalCount);
-            this.panel4.Controls.Add(this.DisplayCount);
-            this.panel4.Controls.Add(this.BillingInfoGridView);
+            this.panel4.Controls.Add(this.LblTotalCount);
+            this.panel4.Controls.Add(this.LblDisplayCount);
+            this.panel4.Controls.Add(this.DgbBillingInfoGridView);
             this.panel4.Location = new System.Drawing.Point(5, 211);
             this.panel4.Margin = new System.Windows.Forms.Padding(4);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(1489, 529);
             this.panel4.TabIndex = 10;
             // 
-            // PreviousButton
+            // BtnPreviousButton
             // 
-            this.PreviousButton.Location = new System.Drawing.Point(1355, 4);
-            this.PreviousButton.Margin = new System.Windows.Forms.Padding(4);
-            this.PreviousButton.Name = "PreviousButton";
-            this.PreviousButton.Size = new System.Drawing.Size(60, 38);
-            this.PreviousButton.TabIndex = 2;
-            this.PreviousButton.Text = "前頁";
-            this.PreviousButton.UseVisualStyleBackColor = true;
+            this.BtnPreviousButton.Location = new System.Drawing.Point(1355, 4);
+            this.BtnPreviousButton.Margin = new System.Windows.Forms.Padding(4);
+            this.BtnPreviousButton.Name = "BtnPreviousButton";
+            this.BtnPreviousButton.Size = new System.Drawing.Size(60, 38);
+            this.BtnPreviousButton.TabIndex = 7;
+            this.BtnPreviousButton.Text = "前頁";
+            this.BtnPreviousButton.UseVisualStyleBackColor = true;
             // 
-            // NextButton
+            // BtnNextButton
             // 
-            this.NextButton.Location = new System.Drawing.Point(1422, 4);
-            this.NextButton.Margin = new System.Windows.Forms.Padding(4);
-            this.NextButton.Name = "NextButton";
-            this.NextButton.Size = new System.Drawing.Size(60, 38);
-            this.NextButton.TabIndex = 2;
-            this.NextButton.Text = "次頁";
-            this.NextButton.UseVisualStyleBackColor = true;
+            this.BtnNextButton.Location = new System.Drawing.Point(1422, 4);
+            this.BtnNextButton.Margin = new System.Windows.Forms.Padding(4);
+            this.BtnNextButton.Name = "BtnNextButton";
+            this.BtnNextButton.Size = new System.Drawing.Size(60, 38);
+            this.BtnNextButton.TabIndex = 8;
+            this.BtnNextButton.Text = "次頁";
+            this.BtnNextButton.UseVisualStyleBackColor = true;
             // 
             // label6
             // 
@@ -236,33 +238,33 @@
             this.label6.TabIndex = 1;
             this.label6.Text = "/";
             // 
-            // TotalCount
+            // LblTotalCount
             // 
-            this.TotalCount.AutoSize = true;
-            this.TotalCount.Location = new System.Drawing.Point(1278, 11);
-            this.TotalCount.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.TotalCount.Name = "TotalCount";
-            this.TotalCount.Size = new System.Drawing.Size(68, 25);
-            this.TotalCount.TabIndex = 1;
-            this.TotalCount.Text = "520件";
+            this.LblTotalCount.AutoSize = true;
+            this.LblTotalCount.Location = new System.Drawing.Point(1278, 11);
+            this.LblTotalCount.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.LblTotalCount.Name = "LblTotalCount";
+            this.LblTotalCount.Size = new System.Drawing.Size(68, 25);
+            this.LblTotalCount.TabIndex = 1;
+            this.LblTotalCount.Text = "520件";
             // 
-            // DisplayCount
+            // LblDisplayCount
             // 
-            this.DisplayCount.AutoSize = true;
-            this.DisplayCount.Location = new System.Drawing.Point(1222, 11);
-            this.DisplayCount.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.DisplayCount.Name = "DisplayCount";
-            this.DisplayCount.Size = new System.Drawing.Size(48, 25);
-            this.DisplayCount.TabIndex = 1;
-            this.DisplayCount.Text = "100";
+            this.LblDisplayCount.AutoSize = true;
+            this.LblDisplayCount.Location = new System.Drawing.Point(1222, 11);
+            this.LblDisplayCount.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.LblDisplayCount.Name = "LblDisplayCount";
+            this.LblDisplayCount.Size = new System.Drawing.Size(48, 25);
+            this.LblDisplayCount.TabIndex = 1;
+            this.LblDisplayCount.Text = "100";
             // 
-            // BillingInfoGridView
+            // DgbBillingInfoGridView
             // 
-            this.BillingInfoGridView.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.DgbBillingInfoGridView.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.BillingInfoGridView.BackgroundColor = System.Drawing.SystemColors.ControlLight;
-            this.BillingInfoGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.BillingInfoGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.DgbBillingInfoGridView.BackgroundColor = System.Drawing.SystemColors.ControlLight;
+            this.DgbBillingInfoGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DgbBillingInfoGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.BillingDate,
             this.PaymentType,
             this.CustomerName,
@@ -271,13 +273,15 @@
             this.BillingTax,
             this.TransportationAmount,
             this.BillingTotal});
-            this.BillingInfoGridView.Location = new System.Drawing.Point(0, 49);
-            this.BillingInfoGridView.Margin = new System.Windows.Forms.Padding(4);
-            this.BillingInfoGridView.Name = "BillingInfoGridView";
-            this.BillingInfoGridView.RowHeadersWidth = 51;
-            this.BillingInfoGridView.RowTemplate.Height = 21;
-            this.BillingInfoGridView.Size = new System.Drawing.Size(1484, 476);
-            this.BillingInfoGridView.TabIndex = 0;
+            this.DgbBillingInfoGridView.Location = new System.Drawing.Point(4, 40);
+            this.DgbBillingInfoGridView.Margin = new System.Windows.Forms.Padding(4);
+            this.DgbBillingInfoGridView.MultiSelect = false;
+            this.DgbBillingInfoGridView.Name = "DgbBillingInfoGridView";
+            this.DgbBillingInfoGridView.ReadOnly = true;
+            this.DgbBillingInfoGridView.RowHeadersWidth = 51;
+            this.DgbBillingInfoGridView.RowTemplate.Height = 21;
+            this.DgbBillingInfoGridView.Size = new System.Drawing.Size(1484, 476);
+            this.DgbBillingInfoGridView.TabIndex = 9;
             // 
             // BillingDate
             // 
@@ -285,6 +289,7 @@
             this.BillingDate.HeaderText = "請求日";
             this.BillingDate.MinimumWidth = 6;
             this.BillingDate.Name = "BillingDate";
+            this.BillingDate.ReadOnly = true;
             this.BillingDate.Width = 125;
             // 
             // PaymentType
@@ -293,6 +298,7 @@
             this.PaymentType.HeaderText = "状態";
             this.PaymentType.MinimumWidth = 6;
             this.PaymentType.Name = "PaymentType";
+            this.PaymentType.ReadOnly = true;
             this.PaymentType.Width = 125;
             // 
             // CustomerName
@@ -301,6 +307,7 @@
             this.CustomerName.HeaderText = "請求先";
             this.CustomerName.MinimumWidth = 6;
             this.CustomerName.Name = "CustomerName";
+            this.CustomerName.ReadOnly = true;
             this.CustomerName.Width = 300;
             // 
             // BillingNo
@@ -309,6 +316,7 @@
             this.BillingNo.HeaderText = "請求No";
             this.BillingNo.MinimumWidth = 6;
             this.BillingNo.Name = "BillingNo";
+            this.BillingNo.ReadOnly = true;
             this.BillingNo.Width = 150;
             // 
             // BillingAmount
@@ -317,6 +325,7 @@
             this.BillingAmount.HeaderText = "請求金額(税抜き)";
             this.BillingAmount.MinimumWidth = 6;
             this.BillingAmount.Name = "BillingAmount";
+            this.BillingAmount.ReadOnly = true;
             this.BillingAmount.Width = 125;
             // 
             // BillingTax
@@ -325,6 +334,7 @@
             this.BillingTax.HeaderText = "消費税";
             this.BillingTax.MinimumWidth = 6;
             this.BillingTax.Name = "BillingTax";
+            this.BillingTax.ReadOnly = true;
             this.BillingTax.Width = 125;
             // 
             // TransportationAmount
@@ -333,6 +343,7 @@
             this.TransportationAmount.HeaderText = "交通費";
             this.TransportationAmount.MinimumWidth = 6;
             this.TransportationAmount.Name = "TransportationAmount";
+            this.TransportationAmount.ReadOnly = true;
             this.TransportationAmount.Width = 125;
             // 
             // BillingTotal
@@ -341,6 +352,7 @@
             this.BillingTotal.HeaderText = "合計金額";
             this.BillingTotal.MinimumWidth = 6;
             this.BillingTotal.Name = "BillingTotal";
+            this.BillingTotal.ReadOnly = true;
             this.BillingTotal.Width = 120;
             // 
             // SeikyuFrm
@@ -357,7 +369,7 @@
             this.panel3.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.BillingInfoGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DgbBillingInfoGridView)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -365,24 +377,24 @@
         #endregion
 
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Button SearchButton;
-        private System.Windows.Forms.CheckBox ApproveByManager;
-        private System.Windows.Forms.CheckBox ApproveBySupervisor;
-        private System.Windows.Forms.CheckBox ShowDeleted;
-        private System.Windows.Forms.DateTimePicker BillingEndDate;
-        private System.Windows.Forms.DateTimePicker BillingStartDate;
-        private System.Windows.Forms.ComboBox BillingRecipient;
+        private System.Windows.Forms.Button BtnSearchButton;
+        private System.Windows.Forms.CheckBox CkbxApproveByManager;
+        private System.Windows.Forms.CheckBox CkbxApproveBySupervisor;
+        private System.Windows.Forms.CheckBox CkbxShowDeleted;
+        private System.Windows.Forms.DateTimePicker DtbBillingEndDate;
+        private System.Windows.Forms.DateTimePicker DtbBillingStartDate;
+        private System.Windows.Forms.ComboBox CbbxBillingRecipient;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.DataGridView BillingInfoGridView;
-        private System.Windows.Forms.Button PreviousButton;
-        private System.Windows.Forms.Button NextButton;
+        private System.Windows.Forms.DataGridView DgbBillingInfoGridView;
+        private System.Windows.Forms.Button BtnPreviousButton;
+        private System.Windows.Forms.Button BtnNextButton;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label TotalCount;
-        private System.Windows.Forms.Label DisplayCount;
+        private System.Windows.Forms.Label LblTotalCount;
+        private System.Windows.Forms.Label LblDisplayCount;
         private System.Windows.Forms.DataGridViewTextBoxColumn BillingDate;
         private System.Windows.Forms.DataGridViewTextBoxColumn PaymentType;
         private System.Windows.Forms.DataGridViewTextBoxColumn CustomerName;

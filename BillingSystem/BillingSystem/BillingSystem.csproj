@@ -67,6 +67,7 @@
     <Compile Include="Common\PWDCodingUtil.cs" />
     <Compile Include="DAL\MyCommonDAL.cs" />
     <Compile Include="DAL\SeikyuDAL.cs" />
+    <Compile Include="Enumerations\EnumCls.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
