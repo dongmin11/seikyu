@@ -143,3 +143,37 @@
 2023-11-09 17:14:35,043  INFO（BillingSystem.SeikyuFrm:searchButton）-test
 2023-11-09 17:54:51,619  INFO（BillingSystem.SeikyuFrm:ExecuteQuery）-列 'BranchNo' はテーブル  に属していません。
 2023-11-09 17:57:10,205  INFO（BillingSystem.SeikyuFrm:ExecuteQuery）-列 'BranchNo' はテーブル  に属していません。
+2023-11-10 09:19:00,799  INFO（BillingSystem.Seikyu.SeikyuFrm:searchButton）-test
+2023-11-10 09:19:06,070  INFO（BillingSystem.Seikyu.SeikyuFrm:searchButton）-test
+2023-11-10 09:19:10,678  INFO（BillingSystem.Seikyu.SeikyuFrm:searchButton）-test
+2023-11-10 10:58:59,738  INFO（BillingSystem.Seikyu.SeikyuFrm:ExecuteQuery）-ConnectionString プロパティは初期化されていません。
+2023-11-10 10:58:59,738  INFO（BillingSystem.Seikyu.SeikyuFrm:searchButton）-test
+2023-11-10 11:01:11,413  INFO（BillingSystem.Seikyu.SeikyuFrm:searchButton）-test
+2023-11-10 16:34:14,243  INFO（BillingSystem.Seikyu.SeikyuFrm:searchButton）-test
+2023-11-10 16:57:40,720  INFO（BillingSystem.Seikyu.SeikyuFrm:searchButton）-test
+2023-11-10 16:57:43,495  INFO（BillingSystem.Seikyu.SeikyuFrm:searchButton）-test
+2023-11-10 16:57:46,116  INFO（BillingSystem.Seikyu.SeikyuFrm:searchButton）-test
+2023-11-10 16:57:48,156  INFO（BillingSystem.Seikyu.SeikyuFrm:searchButton）-test
+2023-11-10 16:57:48,648  INFO（BillingSystem.Seikyu.SeikyuFrm:searchButton）-test
+2023-11-10 16:57:48,836  INFO（BillingSystem.Seikyu.SeikyuFrm:searchButton）-test
+2023-11-10 16:57:48,997  INFO（BillingSystem.Seikyu.SeikyuFrm:searchButton）-test
+2023-11-10 16:57:49,155  INFO（BillingSystem.Seikyu.SeikyuFrm:searchButton）-test
+2023-11-10 16:57:49,322  INFO（BillingSystem.Seikyu.SeikyuFrm:searchButton）-test
+2023-11-10 17:02:01,042  INFO（BillingSystem.Seikyu.SeikyuFrm:searchButton）-test
+2023-11-10 17:04:36,154  INFO（BillingSystem.Seikyu.SeikyuFrm:searchButton）-test
+2023-11-10 17:16:52,548  INFO（BillingSystem.Seikyu.SeikyuFrm:searchButton）-test
+2023-11-10 17:22:46,354  INFO（BillingSystem.Seikyu.SeikyuFrm:searchButton）-test
+2023-11-10 17:36:50,359  INFO（BillingSystem.Seikyu.SeikyuFrm:searchButton）-test
+2023-11-10 17:45:56,845  INFO（BillingSystem.Seikyu.SeikyuFrm:searchButton）-test
+2023-11-10 17:53:56,620  INFO（BillingSystem.Seikyu.SeikyuFrm:searchButton）-test
+2023-11-10 17:59:28,419  INFO（BillingSystem.Seikyu.SeikyuFrm:searchButton）-test
+2023-11-10 18:08:11,072  INFO（BillingSystem.Seikyu.SeikyuFrm:searchButton）-test
+2023-11-10 18:09:49,856  INFO（BillingSystem.Seikyu.SeikyuFrm:searchButton）-test
+2023-11-10 18:10:04,432  INFO（BillingSystem.Seikyu.SeikyuFrm:searchButton）-test
+2023-11-10 18:13:20,059  INFO（BillingSystem.Seikyu.SeikyuFrm:searchButton）-test
+2023-11-10 18:26:40,258  INFO（BillingSystem.Seikyu.SeikyuFrm:searchButton）-test
+2023-11-10 18:27:08,614  INFO（BillingSystem.Seikyu.SeikyuFrm:searchButton）-test
+2023-11-10 18:29:30,190  INFO（BillingSystem.Seikyu.SeikyuFrm:searchButton）-test
+2023-11-10 18:31:38,177  INFO（BillingSystem.Seikyu.SeikyuFrm:searchButton）-test
+2023-11-10 18:39:02,811  INFO（BillingSystem.Seikyu.SeikyuFrm:searchButton）-test
+2023-11-10 18:44:02,082  INFO（BillingSystem.Seikyu.SeikyuFrm:searchButton）-test

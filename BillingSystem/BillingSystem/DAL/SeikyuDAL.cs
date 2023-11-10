@@ -21,7 +21,6 @@ namespace BillingSystem.DAL
             int i = -1;
             try
             {
-
                 #region SQL文 
                 StringBuilder sb = new StringBuilder();
                 sb.Append(" UPDATE M_Message");

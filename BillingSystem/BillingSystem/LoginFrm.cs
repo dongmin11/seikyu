@@ -5,6 +5,7 @@ using Common;
 using System;
 using System.Collections;
 using System.Windows.Forms;
+using BillingSystem.Seikyu;
 
 namespace BillingSystem
 {
@@ -57,13 +58,14 @@ namespace BillingSystem
 
                 //if (this.TxtUserID.Text.Equals("test") && this.TxtPassword.Text.Equals("12345"))
                 //{
-                    // ログイン正常の場合、アカウント情報設定する
-                    AccountInfo.UserID = "DB値";
+                // ログイン正常の場合、アカウント情報設定する
+                AccountInfo.UserID = "DB値";
                     AccountInfo.UserName = "DB値";
                     AccountInfo.Password = "DB値";
                     this.Hide();
                     SeikyuFrm seikyu = new SeikyuFrm();
                     seikyu.Show();
+
                 //}
                 //else
                 //{

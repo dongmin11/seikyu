@@ -1,6 +1,6 @@
-﻿namespace BillingSystem
+﻿namespace BillingSystem.Seikyu
 {
-    partial class SeikyuFrm
+    partial class SeikyuFrm : BillingSystem.BaseFrom.BaseFrm
     {
         /// <summary>
         /// 必要なデザイナー変数です。
@@ -62,7 +62,11 @@
             // 
             // LblLoginUserName
             // 
-            this.LblLoginUserName.Location = new System.Drawing.Point(1140, 9);
+            this.LblLoginUserName.Location = new System.Drawing.Point(1149, 9);
+            // 
+            // LblProcessName
+            // 
+            this.LblProcessName.Size = new System.Drawing.Size(798, 39);
             // 
             // panel3
             // 
@@ -146,6 +150,7 @@
             // 
             // CbbxBillingRecipient
             // 
+            this.CbbxBillingRecipient.DisplayMember = "CustomerName";
             this.CbbxBillingRecipient.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CbbxBillingRecipient.FormattingEnabled = true;
             this.CbbxBillingRecipient.Location = new System.Drawing.Point(106, 51);
@@ -153,6 +158,7 @@
             this.CbbxBillingRecipient.Name = "CbbxBillingRecipient";
             this.CbbxBillingRecipient.Size = new System.Drawing.Size(329, 33);
             this.CbbxBillingRecipient.TabIndex = 4;
+            this.CbbxBillingRecipient.ValueMember = "ID";
             // 
             // label4
             // 
@@ -280,6 +286,7 @@
             this.DgbBillingInfoGridView.ReadOnly = true;
             this.DgbBillingInfoGridView.RowHeadersWidth = 51;
             this.DgbBillingInfoGridView.RowTemplate.Height = 21;
+            this.DgbBillingInfoGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DgbBillingInfoGridView.Size = new System.Drawing.Size(1484, 476);
             this.DgbBillingInfoGridView.TabIndex = 9;
             // 
@@ -358,7 +365,7 @@
             // SeikyuFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
-            this.ClientSize = new System.Drawing.Size(1499, 799);
+            this.ClientSize = new System.Drawing.Size(1508, 835);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
             this.Margin = new System.Windows.Forms.Padding(6);
@@ -389,12 +396,12 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.DataGridView DgbBillingInfoGridView;
         private System.Windows.Forms.Button BtnPreviousButton;
         private System.Windows.Forms.Button BtnNextButton;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label LblTotalCount;
         private System.Windows.Forms.Label LblDisplayCount;
+        private System.Windows.Forms.DataGridView DgbBillingInfoGridView;
         private System.Windows.Forms.DataGridViewTextBoxColumn BillingDate;
         private System.Windows.Forms.DataGridViewTextBoxColumn PaymentType;
         private System.Windows.Forms.DataGridViewTextBoxColumn CustomerName;
