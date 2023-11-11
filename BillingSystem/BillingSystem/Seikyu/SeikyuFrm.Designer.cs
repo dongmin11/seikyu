@@ -62,11 +62,13 @@
             // 
             // LblLoginUserName
             // 
-            this.LblLoginUserName.Location = new System.Drawing.Point(1149, 9);
+            this.LblLoginUserName.Location = new System.Drawing.Point(958, 7);
+            this.LblLoginUserName.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
             // 
             // LblProcessName
             // 
-            this.LblProcessName.Size = new System.Drawing.Size(798, 39);
+            this.LblProcessName.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
+            this.LblProcessName.Size = new System.Drawing.Size(665, 31);
             // 
             // panel3
             // 
@@ -81,18 +83,16 @@
             this.panel3.Controls.Add(this.label2);
             this.panel3.Controls.Add(this.label3);
             this.panel3.Controls.Add(this.label1);
-            this.panel3.Location = new System.Drawing.Point(5, 55);
-            this.panel3.Margin = new System.Windows.Forms.Padding(4);
+            this.panel3.Location = new System.Drawing.Point(4, 44);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1489, 135);
+            this.panel3.Size = new System.Drawing.Size(1241, 108);
             this.panel3.TabIndex = 9;
             // 
             // BtnSearchButton
             // 
-            this.BtnSearchButton.Location = new System.Drawing.Point(502, 85);
-            this.BtnSearchButton.Margin = new System.Windows.Forms.Padding(4);
+            this.BtnSearchButton.Location = new System.Drawing.Point(418, 68);
             this.BtnSearchButton.Name = "BtnSearchButton";
-            this.BtnSearchButton.Size = new System.Drawing.Size(120, 38);
+            this.BtnSearchButton.Size = new System.Drawing.Size(100, 30);
             this.BtnSearchButton.TabIndex = 6;
             this.BtnSearchButton.Text = "検索";
             this.BtnSearchButton.UseVisualStyleBackColor = true;
@@ -101,10 +101,9 @@
             // CkbxApproveByManager
             // 
             this.CkbxApproveByManager.AutoSize = true;
-            this.CkbxApproveByManager.Location = new System.Drawing.Point(821, 14);
-            this.CkbxApproveByManager.Margin = new System.Windows.Forms.Padding(4);
+            this.CkbxApproveByManager.Location = new System.Drawing.Point(684, 11);
             this.CkbxApproveByManager.Name = "CkbxApproveByManager";
-            this.CkbxApproveByManager.Size = new System.Drawing.Size(134, 29);
+            this.CkbxApproveByManager.Size = new System.Drawing.Size(108, 24);
             this.CkbxApproveByManager.TabIndex = 3;
             this.CkbxApproveByManager.Text = "管理承認済";
             this.CkbxApproveByManager.UseVisualStyleBackColor = true;
@@ -112,10 +111,9 @@
             // CkbxApproveBySupervisor
             // 
             this.CkbxApproveBySupervisor.AutoSize = true;
-            this.CkbxApproveBySupervisor.Location = new System.Drawing.Point(659, 15);
-            this.CkbxApproveBySupervisor.Margin = new System.Windows.Forms.Padding(4);
+            this.CkbxApproveBySupervisor.Location = new System.Drawing.Point(549, 12);
             this.CkbxApproveBySupervisor.Name = "CkbxApproveBySupervisor";
-            this.CkbxApproveBySupervisor.Size = new System.Drawing.Size(154, 29);
+            this.CkbxApproveBySupervisor.Size = new System.Drawing.Size(124, 24);
             this.CkbxApproveBySupervisor.TabIndex = 2;
             this.CkbxApproveBySupervisor.Text = "担当者承認済";
             this.CkbxApproveBySupervisor.UseVisualStyleBackColor = true;
@@ -123,28 +121,25 @@
             // CkbxShowDeleted
             // 
             this.CkbxShowDeleted.AutoSize = true;
-            this.CkbxShowDeleted.Location = new System.Drawing.Point(14, 94);
-            this.CkbxShowDeleted.Margin = new System.Windows.Forms.Padding(4);
+            this.CkbxShowDeleted.Location = new System.Drawing.Point(12, 75);
             this.CkbxShowDeleted.Name = "CkbxShowDeleted";
-            this.CkbxShowDeleted.Size = new System.Drawing.Size(129, 29);
+            this.CkbxShowDeleted.Size = new System.Drawing.Size(104, 24);
             this.CkbxShowDeleted.TabIndex = 5;
             this.CkbxShowDeleted.Text = "削除も表示";
             this.CkbxShowDeleted.UseVisualStyleBackColor = true;
             // 
             // DtbBillingEndDate
             // 
-            this.DtbBillingEndDate.Location = new System.Drawing.Point(352, 10);
-            this.DtbBillingEndDate.Margin = new System.Windows.Forms.Padding(4);
+            this.DtbBillingEndDate.Location = new System.Drawing.Point(293, 8);
             this.DtbBillingEndDate.Name = "DtbBillingEndDate";
-            this.DtbBillingEndDate.Size = new System.Drawing.Size(227, 33);
+            this.DtbBillingEndDate.Size = new System.Drawing.Size(190, 28);
             this.DtbBillingEndDate.TabIndex = 1;
             // 
             // DtbBillingStartDate
             // 
-            this.DtbBillingStartDate.Location = new System.Drawing.Point(106, 9);
-            this.DtbBillingStartDate.Margin = new System.Windows.Forms.Padding(4);
+            this.DtbBillingStartDate.Location = new System.Drawing.Point(88, 7);
             this.DtbBillingStartDate.Name = "DtbBillingStartDate";
-            this.DtbBillingStartDate.Size = new System.Drawing.Size(198, 33);
+            this.DtbBillingStartDate.Size = new System.Drawing.Size(166, 28);
             this.DtbBillingStartDate.TabIndex = 0;
             this.DtbBillingStartDate.ValueChanged += new System.EventHandler(this.changeStartDate);
             // 
@@ -153,50 +148,45 @@
             this.CbbxBillingRecipient.DisplayMember = "CustomerName";
             this.CbbxBillingRecipient.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CbbxBillingRecipient.FormattingEnabled = true;
-            this.CbbxBillingRecipient.Location = new System.Drawing.Point(106, 51);
-            this.CbbxBillingRecipient.Margin = new System.Windows.Forms.Padding(4);
+            this.CbbxBillingRecipient.Location = new System.Drawing.Point(88, 41);
             this.CbbxBillingRecipient.Name = "CbbxBillingRecipient";
-            this.CbbxBillingRecipient.Size = new System.Drawing.Size(329, 33);
+            this.CbbxBillingRecipient.Size = new System.Drawing.Size(275, 28);
             this.CbbxBillingRecipient.TabIndex = 4;
             this.CbbxBillingRecipient.ValueMember = "ID";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(590, 15);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Location = new System.Drawing.Point(492, 12);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(52, 25);
+            this.label4.Size = new System.Drawing.Size(41, 20);
             this.label4.TabIndex = 0;
             this.label4.Text = "状態";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(10, 55);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(8, 44);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(72, 25);
+            this.label2.Size = new System.Drawing.Size(57, 20);
             this.label2.TabIndex = 0;
             this.label2.Text = "請求先";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(312, 16);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(260, 13);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(32, 25);
+            this.label3.Size = new System.Drawing.Size(25, 20);
             this.label3.TabIndex = 0;
             this.label3.Text = "～";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(10, 12);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(8, 10);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(92, 25);
+            this.label1.Size = new System.Drawing.Size(73, 20);
             this.label1.TabIndex = 0;
             this.label1.Text = "請求期間";
             // 
@@ -208,59 +198,55 @@
             this.panel4.Controls.Add(this.LblTotalCount);
             this.panel4.Controls.Add(this.LblDisplayCount);
             this.panel4.Controls.Add(this.DgbBillingInfoGridView);
-            this.panel4.Location = new System.Drawing.Point(5, 211);
-            this.panel4.Margin = new System.Windows.Forms.Padding(4);
+            this.panel4.Location = new System.Drawing.Point(4, 169);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1489, 529);
+            this.panel4.Size = new System.Drawing.Size(1241, 423);
             this.panel4.TabIndex = 10;
             // 
             // BtnPreviousButton
             // 
-            this.BtnPreviousButton.Location = new System.Drawing.Point(1355, 4);
-            this.BtnPreviousButton.Margin = new System.Windows.Forms.Padding(4);
+            this.BtnPreviousButton.Location = new System.Drawing.Point(1129, 3);
             this.BtnPreviousButton.Name = "BtnPreviousButton";
-            this.BtnPreviousButton.Size = new System.Drawing.Size(60, 38);
+            this.BtnPreviousButton.Size = new System.Drawing.Size(50, 30);
             this.BtnPreviousButton.TabIndex = 7;
             this.BtnPreviousButton.Text = "前頁";
             this.BtnPreviousButton.UseVisualStyleBackColor = true;
+            this.BtnPreviousButton.Click += new System.EventHandler(this.BtnPreviousButton_Click);
             // 
             // BtnNextButton
             // 
-            this.BtnNextButton.Location = new System.Drawing.Point(1422, 4);
-            this.BtnNextButton.Margin = new System.Windows.Forms.Padding(4);
+            this.BtnNextButton.Location = new System.Drawing.Point(1185, 3);
             this.BtnNextButton.Name = "BtnNextButton";
-            this.BtnNextButton.Size = new System.Drawing.Size(60, 38);
+            this.BtnNextButton.Size = new System.Drawing.Size(50, 30);
             this.BtnNextButton.TabIndex = 8;
             this.BtnNextButton.Text = "次頁";
             this.BtnNextButton.UseVisualStyleBackColor = true;
+            this.BtnNextButton.Click += new System.EventHandler(this.BtnNextButton_Click);
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(1264, 11);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Location = new System.Drawing.Point(1053, 9);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(21, 25);
+            this.label6.Size = new System.Drawing.Size(16, 20);
             this.label6.TabIndex = 1;
             this.label6.Text = "/";
             // 
             // LblTotalCount
             // 
             this.LblTotalCount.AutoSize = true;
-            this.LblTotalCount.Location = new System.Drawing.Point(1278, 11);
-            this.LblTotalCount.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.LblTotalCount.Location = new System.Drawing.Point(1065, 9);
             this.LblTotalCount.Name = "LblTotalCount";
-            this.LblTotalCount.Size = new System.Drawing.Size(68, 25);
+            this.LblTotalCount.Size = new System.Drawing.Size(55, 20);
             this.LblTotalCount.TabIndex = 1;
             this.LblTotalCount.Text = "520件";
             // 
             // LblDisplayCount
             // 
             this.LblDisplayCount.AutoSize = true;
-            this.LblDisplayCount.Location = new System.Drawing.Point(1222, 11);
-            this.LblDisplayCount.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.LblDisplayCount.Location = new System.Drawing.Point(1018, 9);
             this.LblDisplayCount.Name = "LblDisplayCount";
-            this.LblDisplayCount.Size = new System.Drawing.Size(48, 25);
+            this.LblDisplayCount.Size = new System.Drawing.Size(39, 20);
             this.LblDisplayCount.TabIndex = 1;
             this.LblDisplayCount.Text = "100";
             // 
@@ -279,15 +265,14 @@
             this.BillingTax,
             this.TransportationAmount,
             this.BillingTotal});
-            this.DgbBillingInfoGridView.Location = new System.Drawing.Point(4, 40);
-            this.DgbBillingInfoGridView.Margin = new System.Windows.Forms.Padding(4);
+            this.DgbBillingInfoGridView.Location = new System.Drawing.Point(3, 32);
             this.DgbBillingInfoGridView.MultiSelect = false;
             this.DgbBillingInfoGridView.Name = "DgbBillingInfoGridView";
             this.DgbBillingInfoGridView.ReadOnly = true;
             this.DgbBillingInfoGridView.RowHeadersWidth = 51;
             this.DgbBillingInfoGridView.RowTemplate.Height = 21;
             this.DgbBillingInfoGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DgbBillingInfoGridView.Size = new System.Drawing.Size(1484, 476);
+            this.DgbBillingInfoGridView.Size = new System.Drawing.Size(1237, 381);
             this.DgbBillingInfoGridView.TabIndex = 9;
             // 
             // BillingDate
@@ -364,11 +349,10 @@
             // 
             // SeikyuFrm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
-            this.ClientSize = new System.Drawing.Size(1508, 835);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
+            this.ClientSize = new System.Drawing.Size(1257, 668);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
-            this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "SeikyuFrm";
             this.Controls.SetChildIndex(this.panel3, 0);
             this.Controls.SetChildIndex(this.panel4, 0);

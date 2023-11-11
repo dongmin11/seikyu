@@ -82,6 +82,7 @@
     </Compile>
     <Compile Include="Models\AccountModel.cs" />
     <Compile Include="Models\BillingModel.cs" />
+    <Compile Include="Models\AllCountModel.cs" />
     <Compile Include="Models\SearchBillingModel.cs" />
     <Compile Include="Models\CustomerModal.cs" />
     <Compile Include="Program.cs" />

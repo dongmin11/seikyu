@@ -7,6 +7,8 @@ using System.Data;
 using System.Runtime.InteropServices;
 using System.Configuration;
 using BillingSystem.Common;
+using BillingSystem.Models;
+using System.Collections.Generic;
 
 namespace BillingSystem.BLL
 {
@@ -14,76 +16,94 @@ namespace BillingSystem.BLL
     {
         SeikyuDAL dal = new SeikyuDAL();
 
-        public DataTable ExecuteQuery(string query)
+        #region ユーザ情報を取得
+        /// <summary>
+        /// 請求一覧情報を取得
+        /// </summary>
+        /// <param name="inputData"></param>
+        /// <returns></returns>
+        public List<BillingModel> GetBillingInfo(BillingModel inputData)
         {
-            DataTable resultTable = new DataTable();
-            //string connectionString = "Data Source=10.20.1.9;Initial Catalog=SEIKYUSHO_TEST;User ID=sa;Password=meisen@2022";
+            var selectList = new List<BillingModel>();
 
-            try
+            CommonDelegateSetSqlContext context = new CommonDelegateSetSqlContext(dal.SetSqlContext);
+            List<BillingModel> list = CallHeavyBusinessLogic(() => dal.GetBillingInfo(inputData), context);
+
+            if (list != null)
             {
-                using (SqlConnection connection = new SqlConnection())
-                {
-                    using (SqlCommand command = new SqlCommand(query, connection))
-                    {
-                        connection.Open();
-                        using (SqlDataReader reader = command.ExecuteReader())
-                        {
-                            //テーブルヘッダー追加
-                            for (int i = 0; i < reader.FieldCount; i++)
-                            {
-                                string columnName = reader.GetName(i);
-                                if (columnName == "BranchNo")
-                                {
-                                    continue;
-                                }
-                                resultTable.Columns.Add(reader.GetName(i));
-                            }
-
-                            while (reader.Read())
-                            {
-                                // データリーダーの行をデータテーブルに追加
-                                DataRow row = resultTable.NewRow();
-                                //テーブル中身追加
-                                for (int i = 0; i < reader.FieldCount; i++)
-                                {
-                                    string columnName = reader.GetName(i);
-                                    if (columnName == "BranchNo")
-                                    {
-                                        continue;
-                                    }
-                                    object value = reader[i];
-
-                                    // 数値データをカンマを挿入した文字列に変換
-                                    if (value is decimal || value is int)
-                                    {
-                                        row[columnName] = string.Format("{0:N0}", value);
-                                    }
-                                    else if (value is DateTime)
-                                    {
-                                        row[columnName] = ((DateTime)value).ToString("yyyy/MM/dd");
-
-                                    }
-                                    else
-                                    {
-                                        row[columnName] = value; // 数値以外はそのままセット
-                                    }
-                                }
-                                resultTable.Rows.Add(row);
-                            }
-                        }
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                // エラーハンドリング
-                log.Info(ex.Message);
-                Console.WriteLine("エラー: " + ex.Message);
+                return list;
             }
 
-            return resultTable;
+            return null;
         }
+        #endregion
+
+        #region 請求情報を検索
+
+        /// <summary>
+        /// 請求一覧情報を検索
+        /// </summary>
+        /// <param name="inputData"></param>
+        /// <returns></returns>
+        public List<SearchBillingModel> SearchGetBillingInfo(SearchBillingModel inputData)
+        {
+            var selectList = new List<SearchBillingModel>();
+
+            CommonDelegateSetSqlContext context = new CommonDelegateSetSqlContext(dal.SetSqlContext);
+            List<SearchBillingModel> list = CallHeavyBusinessLogic(() => dal.SearchGetBillingInfo(inputData), context);
+
+            if (list != null)
+            {
+                return list;
+            }
+
+            return null;
+        }
+        #endregion
+
+        #region 
+        /// <summary>
+        ///顧客名取得
+        /// </summary>
+        /// <param name="inputData"></param>
+        /// <returns></returns>
+        public List<CustomerModel> GetCustomerInfo(CustomerModel inputData)
+        {
+            var selectList = new List<CustomerModel>();
+
+            CommonDelegateSetSqlContext context = new CommonDelegateSetSqlContext(dal.SetSqlContext);
+            List<CustomerModel> list = CallHeavyBusinessLogic(() => dal.GetCustomerInfo(inputData), context);
+
+            if (list != null)
+            {
+                return list;
+            }
+
+            return null;
+        }
+        #endregion
+
+
+        #region 
+        /// <summary>
+        ///レコード総数取得用
+        /// </summary>
+        /// <param name="inputData"></param>
+        /// <returns></returns>
+        public List<AllCountModel> GetAllInfo(AllCountModel inputData)
+        {
+            var selectList = new List<AllCountModel>();
+
+            CommonDelegateSetSqlContext context = new CommonDelegateSetSqlContext(dal.SetSqlContext);
+            List<AllCountModel> list = CallHeavyBusinessLogic(() => dal.GetAllInfo(inputData), context);
+
+            if (list != null)
+            {
+                return list;
+            }
+
+            return null;
+        }
+        #endregion
     }
-
-
 }

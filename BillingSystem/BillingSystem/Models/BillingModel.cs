@@ -45,5 +45,6 @@ namespace BillingSystem.Models
         public string BillingTotal { get; set; }
 
 
+
     }
 }

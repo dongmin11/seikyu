@@ -46,12 +46,15 @@ namespace BillingSystem.Models
         /// <summary>
         /// 請求日（税込み）
         /// </summary>
-        public DateTime StartDate { get; set; }
+        public string StartDate { get; set; }
         /// <summary>
         /// 請求日（税込み）
         /// </summary>
-        public DateTime EndDate { get; set; }
-
+        public string EndDate { get; set; }
+        /// <summary>
+        /// 削除フラグ
+        /// </summary>
+        public string DeleteFlag { get; set; }
 
     }
 }

@@ -14,7 +14,7 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using static BillingSystem.Enumerations.EnumCls;
 using BillingSystem.BLL;
 using BillingSystem.Models;
-
+using System.Linq;
 
 namespace BillingSystem.Seikyu
 {
@@ -23,7 +23,7 @@ namespace BillingSystem.Seikyu
     /// </summary>
     public partial class SeikyuFrm : BillingSystem.BaseFrom.BaseFrm
     {
-        MyCommonBLL BLL = new MyCommonBLL();
+        SeikyuBLL BLL = new SeikyuBLL();
         int totalRecord = 0;
         int appearRecord = 0;
         public SeikyuFrm()
@@ -33,23 +33,22 @@ namespace BillingSystem.Seikyu
             DgbBillingInfoGridView.AutoGenerateColumns = false;
             SeikyuBLL bll = new SeikyuBLL();
 
-            // SQLクエリ
+            // 請求先名称一覧取得
             CustomerModel customerInputData = new CustomerModel();
             List<CustomerModel> CustomerData = BLL.GetCustomerInfo(customerInputData);
 
-            //CustomerModel addData = new CustomerModel { CustomerName = "全て" };
-            //CustomerData.Insert(0, addData);
+            CustomerModel addData = new CustomerModel { CustomerName = "全て" };
+            CustomerData.Insert(0, addData);
 
             CbbxBillingRecipient.DataSource = CustomerData;
-
 
             //請求一覧取得
             BillingModel inputData = new BillingModel();
             List<BillingModel> BillingData = BLL.GetBillingInfo(inputData);
+            LblDisplayCount.Text =BillingData.Count.ToString();
+          
 
-            //表示件数
-            //LblDisplayCount.Text = (bills.Rows.Count).ToString();
-
+            //データ成型
             dataFormat();
 
             //データバインド
@@ -73,85 +72,44 @@ namespace BillingSystem.Seikyu
             DtbBillingEndDate.Value = new DateTime(today.Year, today.Month, DateTime.DaysInMonth(today.Year, today.Month));
             DtbBillingEndDate.Text = DtbBillingEndDate.Value.ToString("yyyy年MM月dd日");
 
-            //query = "SELECT ID FROM T_Billing";
-
             //総表示数
-            //DataTable total = bll.ExecuteQuery(query);
-            string columnName = "ID";
-            //object count = total.Compute("COUNT(" + columnName + ")", "");
-            //int elementCount = Convert.ToInt32(count);
-            //LblTotalCount.Text = elementCount.ToString();
+            AllCountModel param = new AllCountModel();
+            List<AllCountModel> AllCount = BLL.GetAllInfo(param);
+            LblTotalCount.Text = AllCount.Count.ToString();
 
         }
-
+        /// <summary>
+        /// 検索機能ボタン
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void searchButton(object sender, EventArgs e)
         {
             //請求開始日時取得
             string billingStartDateText = DtbBillingStartDate.Text;
             DateTime billingStartDate = DateTime.Parse(billingStartDateText);
-            billingStartDateText = billingStartDate.ToString("yyyy-MM-d");
+            billingStartDateText = billingStartDate.ToString("yyyy-MM-dd");
 
             //請求終了日時取得
             string billingEndDateText = DtbBillingEndDate.Text;
             DateTime billingEndDate = DateTime.Parse(billingEndDateText);
-            billingEndDateText = billingEndDate.ToString("yyyy-MM-d");
+            billingEndDateText = billingEndDate.ToString("yyyy-MM-dd");
 
             //選択された請求先取得
             string selectedBillingRecipient = CbbxBillingRecipient.Text;
-            //selectedBillingRecipient = selectedBillingRecipient;
 
             //請求一覧取得
             SearchBillingModel inputData = new SearchBillingModel();
-            inputData.StartDate = DateTime.Parse(billingStartDateText);
-            inputData.EndDate = DateTime.Parse(billingEndDateText); ;
+            inputData.DeleteFlag = CkbxShowDeleted.Checked.ToString();
+            inputData.StartDate = billingStartDateText;
+            inputData.EndDate = billingEndDateText;
             inputData.CustomerName = selectedBillingRecipient;
 
             List<SearchBillingModel> BillingData = BLL.SearchGetBillingInfo(inputData);
-
-            if (CbbxBillingRecipient.SelectedItem.ToString() == "全て")
-            {
-                selectedBillingRecipient = "CustomerName";
-            }
-
-            string appearCheck = null;
-            string showDeleted = CkbxShowDeleted.Checked.ToString();
+            LblDisplayCount.Text = BillingData.Count.ToString();
 
             DgbBillingInfoGridView.DataSource = BillingData;
 
-            //削除済み表示確認
-            if (showDeleted == disappearDeleted.Name)
-            {
-                appearCheck = disappearDeleted.Id.ToString();
-            }else if(showDeleted == appearDeleted.Name) 
-            {
-                appearCheck = appearDeleted.ShortName;
-            }
-
-            //string query = $@"SELECT
-            //                [BillingDate]
-            //                , [BillingNo]
-            //                , [BranchNo]
-            //                , [CustomerName]
-            //                , [PaymentType]
-            //                , [BillingAmount]
-            //                , [BillingTax]
-            //                , [TransportationAmount]
-            //                , [BillingTotal]
-            //            FROM
-            //                [dbo].[T_Billing] 
-            //            WHERE
-            //                BillingDate BETWEEN '{billingStartDateText}' AND '{billingEndDateText}' 
-            //                AND DeleteFlag = '0' 
-            //                AND CustomerName = {selectedBillingRecipient}";
-
-            SeikyuBLL bll = new SeikyuBLL();
-            //DataTable bills = bll.ExecuteQuery(query);
-            //LblDisplayCount.Text = (bills.Rows.Count).ToString();
-
-            //DgbBillingInfoGridView.DataSource = bills;
-
-            // ログ出力
-            log.Info("test");
         }
 
         /// <summary>
@@ -184,5 +142,14 @@ namespace BillingSystem.Seikyu
             DtbBillingEndDate.MinDate = startDate;
         }
 
+        private void BtnNextButton_Click(object sender, EventArgs e)
+        {
+            InitializeComponent();
+        }
+
+        private void BtnPreviousButton_Click(object sender, EventArgs e)
+        {
+            InitializeComponent();
+        }
     }
 }
