@@ -26,6 +26,11 @@ namespace BillingSystem.Seikyu
         SeikyuBLL BLL = new SeikyuBLL();
         int totalRecord = 0;
         int appearRecord = 0;
+
+        private ListBox recordListBox;
+        private int recordsPerPage = 2;
+        private int currentPage = 1;
+
         public SeikyuFrm()
         {
 
@@ -52,7 +57,8 @@ namespace BillingSystem.Seikyu
             dataFormat();
 
             //データバインド
-            DgbBillingInfoGridView.DataSource = BillingData;
+            recordListBox = new ListBox();
+            LoadRecords();
 
             base.LblProcessName.Text = "請求書検索";
             base.LblLoginUserName.Text = AccountInfo.UserName;
@@ -74,10 +80,35 @@ namespace BillingSystem.Seikyu
 
             //総表示数
             AllCountModel param = new AllCountModel();
+            param.DeleteFlag = CkbxShowDeleted.Checked.ToString();
             List<AllCountModel> AllCount = BLL.GetAllInfo(param);
             LblTotalCount.Text = AllCount.Count.ToString();
 
         }
+
+
+        private void LoadRecords()
+        {
+            // 仮のデータを生成
+            BillingModel inputData = new BillingModel();
+            List<BillingModel> BillingData = BLL.GetBillingInfo(inputData);
+
+            // 現在のページのレコードを表示
+            int startIndex = (currentPage - 1) * recordsPerPage;
+            int endIndex = Math.Min(startIndex + recordsPerPage, BillingData.Count);
+
+            //recordListBox.Items.Clear();
+            for (int i = startIndex; i < endIndex; i++)
+            {
+                var a = BillingData[i];
+                recordListBox.Items.Add(BillingData[i]);
+            }
+
+            DgbBillingInfoGridView.DataSource = recordListBox;
+        }
+
+
+
         /// <summary>
         /// 検索機能ボタン
         /// </summary>
@@ -110,6 +141,12 @@ namespace BillingSystem.Seikyu
 
             DgbBillingInfoGridView.DataSource = BillingData;
 
+            //総表示数
+            AllCountModel param = new AllCountModel();
+            param.DeleteFlag = CkbxShowDeleted.Checked.ToString();
+            List<AllCountModel> AllCount = BLL.GetAllInfo(param);
+            LblTotalCount.Text = AllCount.Count.ToString();
+
         }
 
         /// <summary>
@@ -134,6 +171,8 @@ namespace BillingSystem.Seikyu
                 }
             }
         }
+
+
 
 
         private void changeStartDate(object sender, EventArgs e)
